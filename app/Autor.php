@@ -8,7 +8,7 @@ class Autor extends Model
 {
     protected $table = 'autor';
 
-    protected $primaryKey = 'id_autor';
+    protected $primaryKey = 'Id_autor';
 
     public $timestamps = false;
 

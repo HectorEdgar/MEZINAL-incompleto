@@ -23,7 +23,7 @@ class AutorController extends Controller
                 ->where('nombre', 'LIKE', '%' . $query . '%')
                 ->orwhere('apellidos', 'LIKE', '%' . $query . '%')
                 ->orwhere('pseudonimo', 'LIKE', '%' . $query . '%')
-                ->orderBy('id_autor', 'desc')
+                ->orderBy('Id_autor', 'desc')
                 ->paginate(10);
             return view('autor.index', ['autores' => $autores, "searchText" => $query]);
         }
