@@ -12,9 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
+Route::resource('autor','AutorController');
 
 Route::resource('cruds/editor','EditorController');
 
