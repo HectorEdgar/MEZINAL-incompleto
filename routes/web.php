@@ -16,3 +16,7 @@ Route::get('/', function () {
 });
 
 
+Route::resource('cruds/editor','EditorController');
+
+
+
