@@ -23,6 +23,7 @@ class AutorController extends Controller
                 ->where('nombre', 'LIKE', '%' . $query . '%')
                 ->orwhere('apellidos', 'LIKE', '%' . $query . '%')
                 ->orwhere('pseudonimo', 'LIKE', '%' . $query . '%')
+                ->orwhere('Id_autor', 'LIKE', '%' . $query . '%')
                 ->orderBy('Id_autor', 'desc')
                 ->paginate(10);
             return view('autor.index', ['autores' => $autores, "searchText" => $query]);
@@ -34,7 +35,7 @@ class AutorController extends Controller
         return view('autor.create');
     }
 
-    public function store(CategoriaFormRequest $request)
+    public function store(AutorFormRequest $request)
     {
         $autor = new Autor;
         $autor->pseudonimo = $request->get('pseudonimo');
@@ -55,7 +56,7 @@ class AutorController extends Controller
         return view('autor.edit', ["autor" => Autor::findOrFail($id)]);
     }
 
-    public function update(CategoriaFormRequest $request, $id)
+    public function update(AutorFormRequest $request, $id)
     {
         $autor = Autor::findOrFail($id);
         $autor->pseudonimo = $request->get('pseudonimo');
@@ -70,7 +71,9 @@ class AutorController extends Controller
     public function destroy($id)
     {
         $autor = Autor::findOrFail($id);
-        $categoria->destroy();
+        $autor->delete();
+
+        //Session::flash('message','El autor fue eliminado');
 
         return Redirect::to('autor');
 

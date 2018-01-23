@@ -17,7 +17,7 @@
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-        <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+        <a class="navbar-brand" href="index.html">Sistema mezinal</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
             aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -31,10 +31,10 @@
                     </a>
                     <ul class="sidenav-second-level collapse" id="collapseComponents">
                         <li>
-                            <a href="autor">Inicio</a>
+                            <a href="/autor">Inicio</a>
                         </li>
                         <li>
-                            <a href="autor/create">Crear</a>
+                            <a href="/autor/create">Crear</a>
                         </li>
                     </ul>
                 </li>
@@ -245,7 +245,7 @@
     <footer class="sticky-footer">
         <div class="container">
             <div class="text-center">
-                <small>Copyright © Prácticas y Servicio 2018</small>
+                <small>Copyright © Sistema mezinal UNAM 2018</small>
             </div>
         </div>
     </footer>
