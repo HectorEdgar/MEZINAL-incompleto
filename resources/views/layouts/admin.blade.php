@@ -26,11 +26,11 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
-                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
+                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#Autor" data-parent="#exampleAccordion">
                         <i class="fa fa-fw fa-wrench"></i>
                         <span class="nav-link-text">Autor</span>
                     </a>
-                    <ul class="sidenav-second-level collapse" id="collapseComponents">
+                    <ul class="sidenav-second-level collapse" id="Autor">
                         <li>
                             <a href="/autor">Ver Autores</a>
                         </li>
@@ -40,16 +40,30 @@
                     </ul>
                 </li>
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
-                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents2" data-parent="#exampleAccordion">
+                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#Tema" data-parent="#exampleAccordion">
                         <i class="fa fa-fw fa-wrench"></i>
                         <span class="nav-link-text">Tema</span>
                     </a>
-                    <ul class="sidenav-second-level collapse" id="collapseComponents2">
+                    <ul class="sidenav-second-level collapse" id="Tema">
                         <li>
                             <a href="/tema">Ver Temas</a>
                         </li>
                         <li>
                             <a href="/tema/create">Crear Tema</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#Eje" data-parent="#exampleAccordion">
+                        <i class="fa fa-fw fa-wrench"></i>
+                        <span class="nav-link-text">Eje</span>
+                    </a>
+                    <ul class="sidenav-second-level collapse" id="Eje">
+                        <li>
+                            <a href="/eje">Ver Ejes</a>
+                        </li>
+                        <li>
+                            <a href="/eje/create">Crear Eje</a>
                         </li>
                     </ul>
                 </li>

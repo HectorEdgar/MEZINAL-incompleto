@@ -13,7 +13,7 @@ class EjeFormRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,10 @@ class EjeFormRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'nombre'=>'required|max:500',
+            'descripcion'=>'reqired|max:1000',
+            'area'=>'required|max:50',
+            'poblacion'=>'required|max:50'
         ];
     }
 }
