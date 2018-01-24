@@ -1,11 +1,11 @@
 @extends('layouts.admin') 
-@section('titulo') Editar Autor
+@section('titulo') Editar Tema
 @endsection
  
 @section('contenido')
 <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <h3>Editar Autor {{$autor->nombre}}</h3>
+        <h3>Editar Tema {{$tema->nombre}}</h3>
         @if (count($errors)>0)
         <div class="alert alert-danger">
             <ul>
@@ -14,18 +14,12 @@
                 @endforeach
             </ul>
         </div>
-        @endif {!!Form::open(array('url'=>'/autor','method'=>'POST','autocomplete'=>'off')) !!} {{Form::token()}}
+        @endif 
+        {!!Form::model($tema,['method'=>'PATCH','route'=>['tema.update',$tema->id_tema]]) !!}
+        {{Form::token()}}
         <div class="form-group">
-            <label for="pseudonimo">Pseudonimo</label>
-            <input type="text" name="pseudonimo" class="form-control" placeholder="Pseudonimo.." value="{{$autor->pseudonimo}}">
-        </div>
-        <div class="form-group">
-            <label for="nombre">Nombre</label>
-            <input type="text" name="nombre" class="form-control" placeholder="Nombre.." value="{{$autor->nombre}}">
-        </div>
-        <div class="form-group">
-            <label for="apellidos">Apellidos</label>
-            <input type="text" name="apellidos" class="form-control" placeholder="Apellidos.." value="{{$autor->apellidos}}">
+            <label for="descripcion">Descripción</label>
+            <input type="text" name="descripcion" class="form-control" placeholder="Descripción.." value="{{$tema->descripcion}}">
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-primary">Guardar</button>

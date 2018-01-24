@@ -4,8 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-   
+
     <title>SISTEMA DE CATALOGACIÓN PUIC - UNAM</title>
     <!-- Bootstrap-->
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
@@ -40,6 +39,20 @@
                         </li>
                     </ul>
                 </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents2" data-parent="#exampleAccordion">
+                        <i class="fa fa-fw fa-wrench"></i>
+                        <span class="nav-link-text">Tema</span>
+                    </a>
+                    <ul class="sidenav-second-level collapse" id="collapseComponents2">
+                        <li>
+                            <a href="/tema">Ver Temas</a>
+                        </li>
+                        <li>
+                            <a href="/tema/create">Crear Tema</a>
+                        </li>
+                    </ul>
+                </li>
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
                     <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
                         <i class="fa fa-fw fa-file"></i>
@@ -54,8 +67,8 @@
                         </li>
                     </ul>
                 </li>
-                
             </ul>
+           
             <ul class="navbar-nav sidenav-toggler">
                 <li class="nav-item">
                     <a class="nav-link text-center" id="sidenavToggler">
@@ -165,9 +178,7 @@
     <div class="content-wrapper">
         <div class="container-fluid">
             <!--Contenido-->
-            <br><br>
-            @yield('contenido')
-
+            <br><br> @yield('contenido')
             <!--Fin Contenido-->
         </div>
     </div>
@@ -184,13 +195,11 @@
     <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('js/sb-admin.min.js')}}"></script>
 </body>
-      
-    <!-- jQuery 2.1.4 -->
-    <script src="{{asset('js/jQuery-2.1.4.min.js')}}"></script>
-    <!-- Bootstrap 3.3.5 -->
-    <script src="{{asset('js/bootstrap.min.js')}}"></script>
-    <!-- AdminLTE App -->
-    <script src="{{asset('js/app.min.js')}}"></script>
-    
-  </body>
+<!-- jQuery 2.1.4 -->
+<script src="{{asset('js/jQuery-2.1.4.min.js')}}"></script>
+<!-- Bootstrap 3.3.5 -->
+<script src="{{asset('js/bootstrap.min.js')}}"></script>
+<!-- AdminLTE App -->
+<script src="{{asset('js/app.min.js')}}"></script>
+</body>
 </html>
