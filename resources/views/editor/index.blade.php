@@ -5,7 +5,7 @@
 		<h3>Listado de Editores <a href="editor/create"><button class="btn btn-success">Nuevo</button></a></h3>
 
 		<!--ESTO ES COMO UNA MASTER PAGE-->
-		@include('cruds.editor.search')
+		@include('editor.search')
 	</div>
 </div>
 
@@ -26,7 +26,7 @@
                          <a href="" data-target="#modal-delete-{{$cat->id_editor}}" data-toggle="modal"><button class="btn btn-danger">Eliminar</button></a>
 					</td>
 				</tr>
-				@include('cruds.editor.modal')
+				@include('editor.modal')
 				@endforeach
 			</table>
 		</div>

@@ -63,7 +63,6 @@ class AutorController extends Controller
         $autor->nombre = $request->get('nombre');
         $autor->apellidos = $request->get('apellidos');
         $autor->update();
-
         return Redirect::to('autor');
 
     }

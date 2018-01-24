@@ -2,7 +2,9 @@
 @section ('contenido')
 	<div class="row">
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-			<h3>Editar Editor: {{ $editor->editor}}</h3>
+			<h3>Nuevo Editor</h3>
+			<!--VALIDACIONES DE LARAVEL
+			RULES HECHAS EN EL FORM REQUEST-->
 			@if (count($errors)>0)
 			<div class="alert alert-danger">
 				<ul>
@@ -13,7 +15,7 @@
 			</div>
 			@endif
 
-			{!!Form::model($editor,['method'=>'PATCH','route'=>['editor.update',$editor->id_editor]])!!}
+			{!!Form::open(array('url'=>'editor','method'=>'POST','autocomplete'=>'off'))!!}
             {{Form::token()}}
             <div class="form-group">
             	<label for="id_editor">ID del Editor</label>

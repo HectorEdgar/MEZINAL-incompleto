@@ -21,8 +21,6 @@ class EditorController extends Controller
 
 	}
 
-
-
 	//FUNCION INDEX
 	public function index(Request $request)
 	{
@@ -38,7 +36,7 @@ class EditorController extends Controller
 			->where('editor','LIKE','%'.$query.'%')
 			->orderBy('id_editor','desc')
 			->paginate(7);
-			return view('cruds.editor.index',["editores"=>$editores,"searchText"=>$query]);
+			return view('editor.index',["editores"=>$editores,"searchText"=>$query]);
 		}
 	}
 
@@ -46,7 +44,7 @@ class EditorController extends Controller
 	public function create()
 	{
 
-		return view("cruds.editor.create");
+		return view("editor.create");
 	}
 
 	public function store(EditorFormRequest $request)
@@ -57,7 +55,7 @@ class EditorController extends Controller
 		$editor->editor=$request->get('editor');
 		$editor->save();
 
-		return Redirect::to('cruds/editor');
+		return Redirect::to('editor');
 	}
 
 	//BUSQUEDA DE DE UN SOLO REGISTRO
@@ -65,13 +63,13 @@ class EditorController extends Controller
 	public function show($id)
 	{
 
-		return view("cruds.editor.show",["editor"=>Editor::findOrFail($id)]);
+		return view("editor.show",["editor"=>Editor::findOrFail($id)]);
 	}
 
 	//modificar los campos de l editor
 	public function edit($id)
 	{
-		return view("cruds.editor.edit",["editor"=>Editor::findOrFail($id)]);
+		return view("editor.edit",["editor"=>Editor::findOrFail($id)]);
 
 	}
 
@@ -85,7 +83,7 @@ class EditorController extends Controller
 		$editor->editor=$request->get('editor');
 		$editor->update();
 
-		return Redirect::to('cruds/editor');
+		return Redirect::to('editor');
 
 	}
 	
@@ -93,7 +91,7 @@ class EditorController extends Controller
 	{
 		$editor=Editor::findOrFail($id);
 		$editor->delete();
-		return Redirect::to('cruds/editor');
+		return Redirect::to('editor');
 	}
 
 }
