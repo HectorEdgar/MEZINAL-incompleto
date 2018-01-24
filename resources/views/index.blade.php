@@ -3,7 +3,7 @@
     Index
 @endsection
 @section('contenido')
-    <h3>Index</h3>
+    <h3>Bienvenido : </h3>
 <div class="row">
   <div class="col-sm-2">
     <div class="card">
