@@ -9,10 +9,16 @@
     <!-- Bootstrap-->
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" type="text/css">
     <!-- Custom styles for this template-->
+<<<<<<< HEAD
     <link href="{{asset('css/sb-admin.min.css')}}" rel="stylesheet" type="text/css">
+=======
+
+    <link href="{{asset('css/sb-admin.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/paginador.css')}}" rel="stylesheet">
+
+>>>>>>> ad8a42c59f9644947f3a73f6e670b55143426727
     <!-- Custom fonts for this template-->
-    <link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
-</head>
+<link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet" type="text/css"></head>
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">

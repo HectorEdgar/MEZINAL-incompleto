@@ -61,6 +61,20 @@
       </div>
     </div>
   </div>
+
+<div class="col-sm-2">
+    <div class="card">
+      <div class="card-block">
+        <center>
+        <h3 class="card-title">Institución</h3>
+        <p class="card-text">Tabla institucion</p>
+        <a href="/institucion" class="btn btn-primary">Vamos</a>
+        </center>
+      </div>
+    </div>
+  </div>
 </div>
+
+
 
 @endsection
