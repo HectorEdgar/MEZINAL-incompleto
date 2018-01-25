@@ -11,9 +11,6 @@
 |
 */
 
-Route::get('/index', function () {
-    return view('auth/login');
-});
 
 //EDGAR
 Route::resource('autor','AutorController')->middleware('auth');
