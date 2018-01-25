@@ -5,7 +5,7 @@
 @section('contenido')
     <h3>Bienvenido : </h3>
 <div class="row">
-  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+  <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
     <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
       <div class="card-header text-center">Catalogo</div>
       <div class="card-body">
@@ -18,7 +18,7 @@
     </div>
   </div>
 
-  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+  <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
     <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
       <div class="card-header text-center">Catalogo</div>
       <div class="card-body">
@@ -31,7 +31,7 @@
     </div>
   </div>
 
-  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+  <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
     <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
       <div class="card-header text-center">Catalogo</div>
       <div class="card-body">
@@ -44,7 +44,7 @@
     </div>
   </div>
 
-  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+  <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
     <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
       <div class="card-header text-center">Catalogo</div>
       <div class="card-body">
@@ -58,7 +58,7 @@
   </div>
 
 
-  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+  <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
     <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
       <div class="card-header text-center">Catalogo</div>
       <div class="card-body">
@@ -71,7 +71,7 @@
     </div>
   </div>
 
-  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+  <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
       <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
         <div class="card-header text-center">Catalogo</div>
         <div class="card-body">
