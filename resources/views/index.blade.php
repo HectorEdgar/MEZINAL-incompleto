@@ -49,5 +49,18 @@
       </div>
     </div>
   </div>
+
+<div class="col-sm-2">
+    <div class="card">
+      <div class="card-block">
+        <center>
+        <h3 class="card-title">Paises</h3>
+        <p class="card-text">Tabla paises</p>
+        <a href="/paises" class="btn btn-primary">Vamos</a>
+        </center>
+      </div>
+    </div>
+  </div>
 </div>
+
 @endsection

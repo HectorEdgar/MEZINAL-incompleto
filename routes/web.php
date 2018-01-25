@@ -15,11 +15,15 @@ Route::get('/', function () {
     return view('index');
 });
 
+//EDGAR
 Route::resource('autor','AutorController');
 Route::resource('tema', 'TemaController');
 Route::resource('eje', 'EjeController');
 
+//YU
 Route::resource('editor','EditorController');
+Route::resource('paises', 'PaisesController');
+Route::resource('institucion', 'InstitucionController');
 
 
 
