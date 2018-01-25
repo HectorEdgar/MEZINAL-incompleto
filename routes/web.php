@@ -17,7 +17,7 @@ Route::resource('autor','AutorController')->middleware('auth');
 Route::resource('tema', 'TemaController')->middleware('auth');
 Route::resource('eje', 'EjeController')->middleware('auth');
 //Routh::auth();
-Route::get('/index', function () {
+Route::get('/', function () {
     return view('index');
 });
 Route::get('logout', 'auth\LoginController@logout');
