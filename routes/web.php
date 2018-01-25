@@ -11,23 +11,23 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/index', function () {
     return view('auth/login');
 });
 
 //EDGAR
-Route::resource('autor','AutorController');
-Route::resource('tema', 'TemaController');
-Route::resource('eje', 'EjeController');
+Route::resource('autor','AutorController')->middleware('auth');
+Route::resource('tema', 'TemaController')->middleware('auth');
+Route::resource('eje', 'EjeController')->middleware('auth');
 //Routh::auth();
 Route::get('/index', function () {
     return view('index');
 });
 Route::get('logout', 'auth\LoginController@logout');
 //YU
-Route::resource('editor','EditorController');
-Route::resource('paises', 'PaisesController');
-Route::resource('institucion', 'InstitucionController');
+Route::resource('editor','EditorController')->middleware('auth');
+Route::resource('paises', 'PaisesController')->middleware('auth');
+Route::resource('institucion', 'InstitucionController')->middleware('auth');
 
 
 

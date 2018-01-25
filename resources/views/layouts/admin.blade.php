@@ -187,11 +187,26 @@
                         </div>
                     </form>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link"  href="{{url('/logout')}}">
-                        <i class="fa fa-fw fa-sign-out"></i>Logout
-                    </a>
-                </li>
+                @guest
+                    <li class="nav-item">
+                        <a class="btn btn-primary" href="{{ route('login') }}">Iniciar Sesión</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="btn btn-secondary" href="{{ route('register') }}">Registrarse</a>
+                    </li>
+                @else
+                <button class="btn btn-success">
+                    {{ Auth::user()->name }}
+                </button>    
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url('/logout')}}">
+                            <i class="fa fa-fw fa-sign-out"></i>Logout
+                        </a>
+                    </li>
+                @endguest
+                
+                
             </ul>
         </div>
     </nav>
