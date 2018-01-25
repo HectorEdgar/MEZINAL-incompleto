@@ -14,7 +14,9 @@
                 @endforeach
             </ul>
         </div>
-        @endif {!!Form::open(array('url'=>'/autor','method'=>'POST','autocomplete'=>'off')) !!} {{Form::token()}}
+        @endif 
+        {!!Form::model($autor,['method'=>'PATCH','route'=>['autor.update',$autor->Id_autor]]) !!}
+        {{Form::token()}}
         <div class="form-group">
             <label for="pseudonimo">Pseudonimo</label>
             <input type="text" name="pseudonimo" class="form-control" placeholder="Pseudonimo.." value="{{$autor->pseudonimo}}">

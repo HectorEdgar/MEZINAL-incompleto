@@ -16,6 +16,8 @@ Route::get('/', function () {
 });
 
 Route::resource('autor','AutorController');
+Route::resource('tema', 'TemaController');
+Route::resource('eje', 'EjeController');
 
 Route::resource('editor','EditorController');
 
