@@ -12,7 +12,8 @@ class AutorController extends Controller
 {
     public function __construct()
     {
-
+        //si no esta logeado regresa al login
+        $this->middleware('auth');
     }
 
     public function index(Request $request)

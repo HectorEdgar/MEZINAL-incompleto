@@ -7,9 +7,9 @@
 
     <title>SISTEMA DE CATALOGACIÓN PUIC - UNAM</title>
     <!-- Bootstrap-->
-    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" type="text/css">
     <!-- Custom styles for this template-->
-    <link href="{{asset('css/sb-admin.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/sb-admin.min.css')}}" rel="stylesheet" type="text/css">
     <!-- Custom fonts for this template-->
     <link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
 </head>
@@ -182,7 +182,7 @@
                     </form>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+                    <a class="nav-link"  href="{{url('/logout')}}">
                         <i class="fa fa-fw fa-sign-out"></i>Logout
                     </a>
                 </li>
@@ -209,11 +209,7 @@
     <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('js/sb-admin.min.js')}}"></script>
 </body>
-<!-- jQuery 2.1.4 -->
-<script src="{{asset('js/jQuery-2.1.4.min.js')}}"></script>
-<!-- Bootstrap 3.3.5 -->
-<script src="{{asset('js/bootstrap.min.js')}}"></script>
-<!-- AdminLTE App -->
-<script src="{{asset('js/app.min.js')}}"></script>
+
+
 </body>
 </html>

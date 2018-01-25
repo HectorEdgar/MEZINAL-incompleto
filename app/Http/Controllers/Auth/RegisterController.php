@@ -68,4 +68,9 @@ class RegisterController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+    /*desabilita la funcion de registrar
+    public function showRegistrationForm(){
+        return redirect('login');
+    }
+    */
 }
