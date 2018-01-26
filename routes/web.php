@@ -25,5 +25,12 @@ Route::resource('editor','EditorController');
 Route::resource('paises', 'PaisesController');
 Route::resource('institucion', 'InstitucionController');
 
+//Jair
+
+Route::resource('ponencia', 'PonenciaController');
+Route::resource('categoriaDocumento', 'CategoriaDocumentoController');
+
+
+
 
 
