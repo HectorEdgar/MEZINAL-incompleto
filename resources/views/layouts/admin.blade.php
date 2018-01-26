@@ -172,7 +172,7 @@
                         <a class="dropdown-item small" href="#">View all alerts</a>
                     </div>
                 </li>
-                <li class="nav-item">
+              <!--  <li class="nav-item">
                     <form class="form-inline my-2 my-lg-0 mr-lg-2">
                         <div class="input-group">
                             <input class="form-control" type="text" placeholder="Search for...">
@@ -184,6 +184,7 @@
                         </div>
                     </form>
                 </li>
+            -->
                 @guest
                     <li class="nav-item">
                         <a class="btn btn-primary" href="{{ route('login') }}">Iniciar Sesión</a>
@@ -198,7 +199,7 @@
                 </button>    
                     <li class="nav-item">
                         <a class="nav-link" href="{{url('/logout')}}">
-                            <i class="fa fa-fw fa-sign-out"></i>Logout
+                            <i class="fa fa-fw fa-sign-out"></i>Salir
                         </a>
                     </li>
                 @endguest

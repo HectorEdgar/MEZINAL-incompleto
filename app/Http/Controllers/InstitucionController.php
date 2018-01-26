@@ -15,7 +15,9 @@ class InstitucionController extends Controller
     //
     public function __construct()
     {
-
+        //si no esta logeado regresa al login
+        //ES COMO EL PINCHE SPRING SECURITY :v
+        $this->middleware('auth');
     }
 
     public function index(Request $request)

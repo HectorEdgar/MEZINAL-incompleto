@@ -21,13 +21,11 @@ Route::get('/', function () {
     return view('index');
 });
 Route::get('logout', 'auth\LoginController@logout');
+
 //YU
 Route::resource('editor','EditorController')->middleware('auth');
 Route::resource('paises', 'PaisesController')->middleware('auth');
 Route::resource('institucion', 'InstitucionController')->middleware('auth');
-
-
-
 
 Auth::routes();
 

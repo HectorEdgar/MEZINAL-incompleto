@@ -13,6 +13,7 @@ class AutorController extends Controller
     public function __construct()
     {
         //si no esta logeado regresa al login
+        //ES COMO EL PINCHE SPRING SECURITY :v
         $this->middleware('auth');
     }
 

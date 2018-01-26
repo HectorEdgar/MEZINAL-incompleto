@@ -1,5 +1,4 @@
 @extends('layouts.admin')
-
 @section('contenido')
 <div class="row container-fluid">
     <div class="col-lg-3 col-md-2"></div>
@@ -32,7 +31,7 @@
                     <div class="form-group">
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Recardarme en este equipo
+                                <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Recordarme en este equipo
                             </label>
                         </div>
                     </div>
