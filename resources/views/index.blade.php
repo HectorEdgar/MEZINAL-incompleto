@@ -3,78 +3,87 @@
     Index
 @endsection
 @section('contenido')
-    <h3>Bienvenido : </h3>
+    <h3>Bienvenido  {{ Auth::user()->name }}  ¿Qué deseas checar hoy? </h3>
+    <br>
 <div class="row">
-  <div class="col-sm-2">
-    <div class="card">
-      <div class="card-block">
-      	<center>
-        <h3 class="card-title">Autor</h3>
-        <p class="card-text">Tabla Autor</p>
-        <a href="/autor" class="btn btn-primary">Vamos</a>
-        </center>
+  <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+    <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+      <div class="card-header text-center">Catalogo</div>
+      <div class="card-body">
+        <h5 class="card-title">Autor</h5>
+        <p class="card-text">Entra al catálogo de la tabla Autor</p>
       </div>
-    </div>
-  </div>
-  <div class="col-sm-2">
-    <div class="card">
-      <div class="card-block">
-        <center>
-          <h3 class="card-title">Tema</h3>
-          <p class="card-text">Tabla Tema</p>
-          <a href="/tema" class="btn btn-primary">Vamos</a>
-        </center>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-2">
-    <div class="card">
-      <div class="card-block">
-        <center>
-          <h3 class="card-title">Eje</h3>
-          <p class="card-text">Tabla Eje</p>
-          <a href="/eje" class="btn btn-primary">Vamos</a>
-        </center>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-2">
-    <div class="card">
-      <div class="card-block">
-      	<center>
-        <h3 class="card-title">Editor</h3>
-        <p class="card-text">Tabla Editor</p>
-        <a href="/editor" class="btn btn-primary">Vamos</a>
-        </center>
+      <div class="card-footer">
+        <small class="text-muted"><a href="/autor" class="btn btn-outline-secondary  text-white container-fluid">Vamos</a></small>
       </div>
     </div>
   </div>
 
-<div class="col-sm-2">
-    <div class="card">
-      <div class="card-block">
-        <center>
-        <h3 class="card-title">Paises</h3>
-        <p class="card-text">Tabla paises</p>
-        <a href="/paises" class="btn btn-primary">Vamos</a>
-        </center>
+  <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+    <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+      <div class="card-header text-center">Catalogo</div>
+      <div class="card-body">
+        <h5 class="card-title">Tema</h5>
+        <p class="card-text">Entra al catálogo de la tabla Tema</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted"><a href="/tema" class="btn btn-outline-secondary  text-white container-fluid">Vamos</a></small>
       </div>
     </div>
   </div>
 
-<div class="col-sm-2">
-    <div class="card">
-      <div class="card-block">
-        <center>
-        <h3 class="card-title">Institución</h3>
-        <p class="card-text">Tabla institucion</p>
-        <a href="/institucion" class="btn btn-primary">Vamos</a>
-        </center>
+  <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+    <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+      <div class="card-header text-center">Catalogo</div>
+      <div class="card-body">
+        <h5 class="card-title">Eje</h5>
+        <p class="card-text">Entra al catálogo de la tabla Eje</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted"><a href="/eje" class="btn btn-outline-secondary  text-white container-fluid">Vamos</a></small>
       </div>
     </div>
   </div>
+
+  <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+    <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+      <div class="card-header text-center">Catalogo</div>
+      <div class="card-body">
+        <h5 class="card-title">Editor</h5>
+        <p class="card-text">Entra al catálogo de la tabla Editor</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted"><a href="/editor" class="btn btn-outline-secondary  text-white container-fluid">Vamos</a></small>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+    <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+      <div class="card-header text-center">Catalogo</div>
+      <div class="card-body">
+        <h5 class="card-title">Paises</h5>
+        <p class="card-text">Entra al catálogo de la tabla Paises</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted"><a href="/paises" class="btn btn-outline-secondary  text-white container-fluid">Vamos</a></small>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+      <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+        <div class="card-header text-center">Catalogo</div>
+        <div class="card-body">
+          <h5 class="card-title">Institución</h5>
+          <p class="card-text">Entra al catálogo de la tabla Institución</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted"><a href="/institucion" class="btn btn-outline-secondary  text-white container-fluid">Vamos</a></small>
+        </div>
+      </div>
+    </div>
 </div>
-
-
 
 @endsection

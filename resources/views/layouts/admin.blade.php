@@ -7,11 +7,12 @@
 
     <title>SISTEMA DE CATALOGACIÓN PUIC - UNAM</title>
     <!-- Bootstrap-->
-    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" type="text/css">
     <!-- Custom styles for this template-->
 
     <link href="{{asset('css/sb-admin.min.css')}}" rel="stylesheet">
     <link href="{{asset('css/paginador.css')}}" rel="stylesheet">
+    
 
     <!-- Custom fonts for this template-->
 <link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet" type="text/css"></head>
@@ -171,7 +172,7 @@
                         <a class="dropdown-item small" href="#">View all alerts</a>
                     </div>
                 </li>
-                <li class="nav-item">
+              <!--  <li class="nav-item">
                     <form class="form-inline my-2 my-lg-0 mr-lg-2">
                         <div class="input-group">
                             <input class="form-control" type="text" placeholder="Search for...">
@@ -183,18 +184,37 @@
                         </div>
                     </form>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-                        <i class="fa fa-fw fa-sign-out"></i>Logout
-                    </a>
-                </li>
+            -->
+                @guest
+                    <li class="nav-item">
+                        <a class="btn btn-primary" href="{{ route('login') }}">Iniciar Sesión</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="btn btn-secondary" href="{{ route('register') }}">Registrarse</a>
+                    </li>
+                @else
+                <button class="btn btn-success">
+                    {{ Auth::user()->name }}
+                </button>    
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url('/logout')}}">
+                            <i class="fa fa-fw fa-sign-out"></i>Salir
+                        </a>
+                    </li>
+                @endguest
+                
+                
             </ul>
         </div>
     </nav>
     <div class="content-wrapper">
         <div class="container-fluid">
             <!--Contenido-->
-            <br><br> @yield('contenido')
+            <div class="container">
+                <br><br>
+                @yield('contenido')
+            </div>
             <!--Fin Contenido-->
         </div>
     </div>
@@ -211,11 +231,7 @@
     <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('js/sb-admin.min.js')}}"></script>
 </body>
-<!-- jQuery 2.1.4 -->
-<script src="{{asset('js/jQuery-2.1.4.min.js')}}"></script>
-<!-- Bootstrap 3.3.5 -->
-<script src="{{asset('js/bootstrap.min.js')}}"></script>
-<!-- AdminLTE App -->
-<script src="{{asset('js/app.min.js')}}"></script>
+
+
 </body>
 </html>

@@ -11,27 +11,38 @@
 |
 */
 
+
+//EDGAR
+Route::resource('autor','AutorController')->middleware('auth');
+Route::resource('tema', 'TemaController')->middleware('auth');
+Route::resource('eje', 'EjeController')->middleware('auth');
+//Routh::auth();
 Route::get('/', function () {
     return view('index');
 });
-
-//EDGAR
-Route::resource('autor','AutorController');
-Route::resource('tema', 'TemaController');
-Route::resource('eje', 'EjeController');
+Route::get('logout', 'auth\LoginController@logout');
 
 //YU
-Route::resource('editor','EditorController');
-Route::resource('paises', 'PaisesController');
-Route::resource('institucion', 'InstitucionController');
+
+
+
+
+Route::resource('editor','EditorController')->middleware('auth');
+Route::resource('paises', 'PaisesController')->middleware('auth');
+Route::resource('institucion', 'InstitucionController')->middleware('auth');
+
+
 
 //Jair
 
-Route::resource('ponencia', 'PonenciaController');
-Route::resource('categoriaDocumento', 'CategoriaDocumentoController');
-Route::resource('documento', 'DocumentoController');
+Route::resource('ponencia', 'PonenciaController')->middleware('auth');
+Route::resource('categoriaDocumento', 'CategoriaDocumentoController')->middleware('auth');
+Route::resource('documento', 'DocumentoController')->middleware('auth');
 
 
 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 
