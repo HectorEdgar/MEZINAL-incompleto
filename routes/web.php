@@ -29,6 +29,7 @@ Route::resource('institucion', 'InstitucionController');
 
 Route::resource('ponencia', 'PonenciaController');
 Route::resource('categoriaDocumento', 'CategoriaDocumentoController');
+Route::resource('documento', 'DocumentoController');
 
 
 
