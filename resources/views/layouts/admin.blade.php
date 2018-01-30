@@ -12,6 +12,7 @@
 
     <link href="{{asset('css/sb-admin.min.css')}}" rel="stylesheet">
     <link href="{{asset('css/paginador.css')}}" rel="stylesheet">
+    <link href="{{asset('css/easy-autocomplete.min.css')}}" rel="stylesheet">
     
 
     <!-- Custom fonts for this template-->
@@ -230,6 +231,8 @@
     <!-- Bootstrap-->
     <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('js/sb-admin.min.js')}}"></script>
+
+    <script src="{{asset('js/jquery.easy-autocomplete.min.js')}}"></script>
 </body>
 
 
