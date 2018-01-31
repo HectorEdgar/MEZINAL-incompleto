@@ -8,6 +8,9 @@
     <title>SISTEMA DE CATALOGACIÓN PUIC - UNAM</title>
     <!-- Bootstrap-->
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" type="text/css">
+
+    <link rel="stylesheet" href="{{asset('css/select.css')}}">
+
     <!-- Custom styles for this template-->
 
     <link href="{{asset('css/sb-admin.min.css')}}" rel="stylesheet">
@@ -227,9 +230,16 @@
         </div>
     </footer>
     <!-- jQuery-->
+
+
+    <!--STACK PERMITE UTILIZAR SCRIPTS PROPIOS-->
+    @stack('scripts')
+
     <script src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
     <!-- Bootstrap-->
     <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('js/select.js')}}"></script>
+
     <script src="{{asset('js/sb-admin.min.js')}}"></script>
 
     <script src="{{asset('js/jquery.easy-autocomplete.min.js')}}"></script>

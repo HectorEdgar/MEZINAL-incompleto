@@ -36,12 +36,10 @@ class PaisesController extends Controller
 			$paises=DB::table('paises')
 			->where('nombre','LIKE','%'.$query.'%')
 			->orderBy('id_pais','desc')
-			->paginate(7);
+			->paginate(10);
 			return view('paises.index',["paises"=>$paises,"searchText"=>$query]);
 		}
 	}
-
-
 	public function create()
 	{
 
@@ -69,12 +67,8 @@ class PaisesController extends Controller
 	public function edit($id)
 	{
 		return view("paises.edit",["paises"=>Paises::findOrFail($id)]);
-
 	}
-
-
-
-
+	
 	public function update(PaisesFormRequest $request, $id)
 	{
 		$pais=Paises::findOrFail($id);

@@ -26,6 +26,7 @@ class InstitucionController extends Controller
             $query = trim($request->get('searchText'));
             $instituciones = DB::table('institucion')
                 ->where('nombre', 'LIKE', '%' . $query . '%')
+                ->orwhere('siglas','LIKE','%' .$query . '%')
                 ->orderBy('Id_institucion', 'desc')
                 ->paginate(10);
             return view('institucion.index', ['instituciones' => $instituciones, "searchText" => $query]);
@@ -40,8 +41,10 @@ class InstitucionController extends Controller
     public function store(InstitucionFormRequest $request)
     {
 
+        $ultimoID = DB::table('institucion')
+        ->max('Id_institucion');
         $institucion = new Institucion;
-        $institucion->Id_institucion= $request->get('Id_institucion');
+        $institucion->Id_institucion= $ultimoID+1;
  		$institucion->nombre= $request->get('nombre');
 		$institucion->siglas= $request->get('siglas');
  		$institucion->pais= $request->get('pais');
@@ -80,9 +83,6 @@ class InstitucionController extends Controller
     {
         $institucion = Institucion::findOrFail($id);
         $institucion->delete();
-
-        //Session::flash('message','El institucion fue eliminado');
-
         return Redirect::to('institucion');
 
     }

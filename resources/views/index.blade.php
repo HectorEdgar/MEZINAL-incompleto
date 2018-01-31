@@ -3,18 +3,13 @@
     Index
 @endsection
 @section('contenido')
-<<<<<<< HEAD
-    <h3>Bienvenido ¿Qué deseas checar hoy? </h3>
-    <br>
-=======
   @guest
-    <h3>Para tener acceso al sistema por favor inicia sesión</h3>
+    <h3>Inicie Sesión por favor</h3>
     @else
       <h3>Bienvenido {{ Auth::user()->name }} ¿Qué deseas checar hoy? </h3>
       <br>
   @endguest
-    
->>>>>>> bbadd9c90743540ed4f1eafdd313b6bed3c17bdd
+  
 <div class="row">
   <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
     <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
