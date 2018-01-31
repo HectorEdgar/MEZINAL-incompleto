@@ -45,6 +45,8 @@
                 </table>
             </div>
             {{$autores->render()}}
+            {{$numero}}
         </div>
     </div>
+
 @endsection
