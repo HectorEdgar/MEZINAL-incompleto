@@ -7,7 +7,7 @@ use practicasUnam\Tema;
 use practicasUnam\Http\Requests\TemaFormRequest;
 use Illuminate\Support\Facades\Redirect;
 use DB;
-
+use practicasUnam\Utilidad;
 class TemaController extends Controller
 {
     public function __construct()
@@ -37,6 +37,7 @@ class TemaController extends Controller
     public function store(TemaFormRequest $request)
     {
         $tema = new Tema;
+        $tema->id_tema=Utilidad::getId("temas","id_tema");
         $tema->descripcion = $request->get('descripcion');
         $tema->save();
 

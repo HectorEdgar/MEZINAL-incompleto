@@ -18,10 +18,6 @@
 			{!!Form::open(array('url'=>'editor','method'=>'POST','autocomplete'=>'off'))!!}
             {{Form::token()}}
             <div class="form-group">
-            	<label for="id_editor">ID del Editor</label>
-            	<input type="text" name="id_editor" class="form-control" placeholder="Id...">
-            </div>
-            <div class="form-group">
             	<label for="editor">Nombre del Editor</label>
             	<input type="text" name="editor" class="form-control" placeholder="nombre...">
             </div>

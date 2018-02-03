@@ -9,7 +9,7 @@ use practicasUnam\Institucion;
 use Illuminate\Support\Facades\Redirect;
 use practicasUnam\Http\Requests\InstitucionFormRequest;
 use DB;
-
+use practicasUnam\Utilidad;
 class InstitucionController extends Controller
 {
     //
@@ -41,16 +41,10 @@ class InstitucionController extends Controller
     public function store(InstitucionFormRequest $request)
     {
 
-        //RELLENAR LOS HUECOS EN LOS ID
-       
-        $primerID = DB::table('institucion')
-        ->min('Id_institucion');
 
-        $ultimoID = DB::table('institucion')
-        ->max('Id_institucion');
        
         $institucion = new Institucion;
-        $institucion->Id_institucion= $ultimoID+1;
+        $institucion->Id_institucion= Utilidad::getId("institucion","Id_institucion");
  		$institucion->nombre= $request->get('nombre');
 		$institucion->siglas= $request->get('siglas');
  		$institucion->pais= $request->get('pais');

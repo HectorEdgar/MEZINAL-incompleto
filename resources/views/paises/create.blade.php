@@ -16,11 +16,7 @@
 			@endif
 
 			{!!Form::open(array('url'=>'paises','method'=>'POST','autocomplete'=>'off'))!!}
-            {{Form::token()}}
-            <div class="form-group">
-            	<label for="id_pais">ID del Pais</label>
-            	<input type="text" name="id_pais" class="form-control" placeholder="Id...">
-            </div>
+            {{Form::token()}}    
             <div class="form-group">
             	<label for="nombre">Nombre del Pais</label>
             	<input type="text" name="nombre" class="form-control" placeholder="nombre...">

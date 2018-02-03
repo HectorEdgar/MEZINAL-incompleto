@@ -24,7 +24,6 @@ class PaisesFormRequest extends FormRequest
     public function rules()
     {
         return [
-             'id_pais'=>'required|max:100',
              'nombre'=>'required|max:100'
             //
         ];

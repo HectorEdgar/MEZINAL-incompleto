@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Redirect;
 use practicasUnam\Http\Requests\PaisesFormRequest;
 use DB;
 use practicasUnam\Http\Controllers\Controller;
-
+use practicasUnam\Utilidad;
 class PaisesController extends Controller
 {
     //
@@ -49,7 +49,7 @@ class PaisesController extends Controller
 	public function store(PaisesFormRequest $request)
 	{
 		$pais=new Paises;
-		$pais->id_pais=$request->get('id_pais');
+		$pais->id_pais=Utilidad::getId("paises","id_pais");
 		$pais->nombre=$request->get('nombre');
 		$pais->save();
 		return Redirect::to('paises');

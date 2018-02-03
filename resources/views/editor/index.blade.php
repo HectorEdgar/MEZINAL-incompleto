@@ -16,6 +16,7 @@
 				<thead>
 					<th>Id</th>
 					<th>Editor</th>
+					<th>Opciones</th>
 				</thead>
                @foreach ($editores as $cat)
 				<tr>

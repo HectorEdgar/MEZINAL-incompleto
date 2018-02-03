@@ -27,6 +27,7 @@ class EjeFormRequest extends FormRequest
             'nombre'=>'required|max:500',
             'area'=>'required|max:50',
             'poblacion'=>'required|max:50'
+            'descripcion'=>'required'
         ];
     }
 }

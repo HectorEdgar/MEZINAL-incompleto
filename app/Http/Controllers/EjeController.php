@@ -7,6 +7,9 @@ use practicasUnam\Eje;
 use practicasUnam\Http\Requests\TemaFormRequest;
 use Illuminate\Support\Facades\Redirect;
 use DB;
+use practicasUnam\Utilidad;
+
+
 class EjeController extends Controller
 {
     public function __construct()
@@ -40,6 +43,7 @@ class EjeController extends Controller
     public function store(TemaFormRequest $request)
     {
         $eje = new Eje;
+        $eje->Id_eje = Utilidad::getId('eje','Id_eje');
         $eje->nombre = $request->get('nombre');
         $eje->descripcion = $request->get('descripcion');
         $eje->area = $request->get('area');

@@ -9,6 +9,7 @@ use practicasUnam\Editor;
 use Illuminate\Support\Facades\Redirect;
 use practicasUnam\Http\Requests\EditorFormRequest;
 use DB;
+use practicasUnam\Utilidad;
 
 use practicasUnam\Http\Controllers\Controller;
 
@@ -53,10 +54,9 @@ class EditorController extends Controller
 	{
 
 		$editor=new Editor;
-		$editor->id_editor=$request->get('id_editor');
+		$editor->id_editor=Utilidad::getId("editor","id_editor");
 		$editor->editor=$request->get('editor');
 		$editor->save();
-
 		return Redirect::to('editor');
 	}
 

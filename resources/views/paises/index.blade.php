@@ -16,11 +16,13 @@
 				<thead>
 					<th>Id</th>
 					<th>Nombre</th>
+					<td>Opciones</td>
 				</thead>
                @foreach ($paises as $cat)
 				<tr>
 					<td>{{ $cat->id_pais}}</td>
 					<td>{{ $cat->nombre}}</td>
+
 					<td>
 						<a href="{{URL::action('PaisesController@edit',$cat->id_pais)}}"><button class="btn btn-info">Editar</button></a>
                          <a href="" data-target="#modal-delete-{{$cat->id_pais}}" data-toggle="modal"><button class="btn btn-danger">Eliminar</button></a>
