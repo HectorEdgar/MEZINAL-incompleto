@@ -38,8 +38,7 @@ class DocumentoFormRequest extends FormRequest
         'notas'  => 'required|max:700', 
         'fecha_registro' => 'required|date',
         'revisado' => 'required|integer|between:0,1 ',
-        'linea'  => 'required|integer',
-        'catalogo_docu_id_cata_doc'  => 'required|integer'
+        'linea'  => 'required|integer'
         ];
     }
 }

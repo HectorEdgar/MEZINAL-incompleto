@@ -27,8 +27,7 @@ class Documento extends Model
 		'notas',
 		'fecha_registro',
 		'revisado',
-		'linea',
-		'catalogo_docu_id_cata_doc' /// *****
+		'linea'
 
 
 	]; 
