@@ -54,7 +54,7 @@
             </table>
             {{$autores->render()}}
             {{$numero}}
-        
+            @include('autor.paginador')
     </div>
 
 @endsection
