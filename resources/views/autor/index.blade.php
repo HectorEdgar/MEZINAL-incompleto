@@ -32,7 +32,7 @@
                     @foreach($autores as $item)
                         <tr>
                             <th scope="row"  class="text-center align-middle">{{$item ->Id_autor}}</td>
-                            <td  class="text-center align-middle">{{$item ->pseudonimo}}</td>
+                            <td class="text-center align-middle">{{$item ->pseudonimo}}</td>
                             <td class="text-center align-middle">{{$item ->nombre}}</td>
                             <td class="text-center align-middle">{{$item ->apellidos}}</td>
                             <td class="text-center align-middle ">
@@ -53,7 +53,7 @@
                 </tbody>
             </table>
             {{$autores->render()}}
-            {{$numero}}
+            {{$totalRegistros}}
             @include('autor.paginador')
     </div>
 
