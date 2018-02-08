@@ -7,14 +7,15 @@
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <h3>Nuevo Autor</h3>
         @if (count($errors)>0)
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                <li>{{$error}}</li>
-                @endforeach
-            </ul>
-        </div>
-        @endif {!!Form::open(array('url'=>'/autor','method'=>'POST','autocomplete'=>'off')) !!} {{Form::token()}}
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{$error}}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif 
+        {!!Form::open(array('url'=>'/autor','method'=>'POST','autocomplete'=>'off')) !!} {{Form::token()}}
         <div class="form-group">
             <label for="pseudonimo">Pseudonimo</label>
             <input type="text" name="pseudonimo" class="form-control" placeholder="Pseudonimo..">

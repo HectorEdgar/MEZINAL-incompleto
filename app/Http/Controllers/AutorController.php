@@ -29,7 +29,18 @@ class AutorController extends Controller
                 ->orwhere('Id_autor', 'LIKE', '%' . $query . '%')
                 ->orderBy('Id_autor', 'desc')
                 ->paginate(10);
-            return view('autor.index', ['autores' => $autores, "searchText" => $query,"numero"=>Utilidad::getId("autor","Id_autor")]);
+            $page=$request->get('page');
+            if($page==null){
+                $page=1;
+            }
+            return view('autor.index', 
+                [
+                    'autores' => $autores, 
+                    "searchText" => $query,
+                    "totalRegistros"=>Utilidad::getCount("autor"),
+                    "page"=> $page
+                ]
+            );
         }
     }
 

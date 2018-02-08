@@ -12,13 +12,18 @@ class Utilidad
         $query = DB::table($nombreTabla)->max($nombreId);
         return $query;
     }
+
+    public static function getCount($nombreTabla)
+    {
+        return DB::table($nombreTabla)->count();
+    }
     //Devuelve el id que le corresponde una nueva inserción dependiendo si hay huecos en la serie de id´s 
     //si hay huecos devuelve el id correspondiente al hueco ordenado de menor a mayor y si no devuelve el id mayor + 1 :´v
     //Id 100% real No FAKE!!
     public static function getId($nombreTabla, $nombreId)
     {
         $maxId=Utilidad::getMaxId($nombreTabla, $nombreId);
-        $numeroRegistros = DB::table($nombreTabla)->count();
+        $numeroRegistros = getCount($nombreTabla);
 
         if($numeroRegistros==$maxId){
             return $maxId+1;
