@@ -27,8 +27,8 @@ Route::resource('institucion', 'InstitucionController')->middleware('auth');
 
 //Jair
 Route::resource('ponencia', 'PonenciaController')->middleware('auth');
-Route::resource('categoriaDocumento', 'CategoriaDocumentoController')->middleware('auth');
-Route::resource('documento', 'DocumentoController')->middleware('auth');
+Route::resource('categoriaDocumento', 'CategoriaDocumentoController');
+Route::resource('documento', 'DocumentoController');
 
 
 Auth::routes();

@@ -3,8 +3,13 @@
 namespace practicasUnam\Http\Controllers;
 
 use Illuminate\Http\Request;
+use practicasUnam\Http\Requests;
+use practicasUnam\Documento;
+use Illuminate\Support\Facades\Redirect;
+use practicasUnam\Http\Requests\DocumentoFormRequest;
+use DB;
 use practicasUnam\Http\Controllers\Controller;
-
+use practicasUnam\Utilidad;
 class DocumentoController extends Controller
 {
 
@@ -40,7 +45,8 @@ class DocumentoController extends Controller
      */
     public function create()
     {
-          return view('documento.create');
+          $categorias=DB::table('catalogo_docu')->get();
+          return view('documento.create',['categorias' => $categorias]);
     }
 
     /**
@@ -67,8 +73,7 @@ class DocumentoController extends Controller
       $documento->fecha_registro = $request->get('fecha_registro');
       $documento->revisado = $request->get('revisado');
       $documento->linea = $request->get('linea');
-      $documento->catalogo_docu_id_cata_doc = $request->get('catalogo_docu_id_cata_doc');
-
+     
 
 
       $documento->save();

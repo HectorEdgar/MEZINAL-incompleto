@@ -4,7 +4,7 @@ namespace practicasUnam;
 
 use Illuminate\Database\Eloquent\Model;
 
-class CatalogoDocumento extends Model
+class CategoriaDocumento extends Model
 {
    protected $table='catalogo_docu';
 

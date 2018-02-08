@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Redirect;
 use practicasUnam\Http\Requests\CategoriaDocumentoFormRequest;
 use DB;
 use practicasUnam\Http\Controllers\Controller;
+use practicasUnam\Utilidad;
 
 class CategoriaDocumentoController extends Controller
 {
@@ -16,6 +17,7 @@ class CategoriaDocumentoController extends Controller
 
     public function __construct()
     {
+       // $this->middleware('auth');
 
     }
 
@@ -32,7 +34,7 @@ class CategoriaDocumentoController extends Controller
             $categoriaDoc = DB::table('catalogo_docu')
                 ->where('tipo_doc', 'LIKE', '%' . $query . '%')
                 ->orwhere('id_cata_doc', 'LIKE', '%' . $query . '%') // duda por ser string
-                ->orderBy('id_cata_doc', 'desc')
+                ->orderBy('id_cata_doc', 'asc')
                 ->paginate(10);
             return view('categoriaDocumento.index', ['categoriasDocumento' => $categoriaDoc, "searchText" => $query]);
         }
@@ -57,6 +59,7 @@ class CategoriaDocumentoController extends Controller
    public function store(CategoriaDocumentoFormRequest $request)
     {
         $categoriaDocumento=new CategoriaDocumento;
+        $categoriaDocumento->id_cata_doc=Utilidad::getId("catalogo_docu","id_cata_doc");
         $categoriaDocumento->tipo_doc=$request->get('tipo_doc');
         $categoriaDocumento->save();
         return Redirect::to('categoriaDocumento');
