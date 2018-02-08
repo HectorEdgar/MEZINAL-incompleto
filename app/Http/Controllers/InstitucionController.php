@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\Redirect;
 use practicasUnam\Http\Requests\InstitucionFormRequest;
 use DB;
 use practicasUnam\Utilidad;
+use Carbon\Carbon;
+use Response;
+use Illuminate\Support\Collection;
+
+
 class InstitucionController extends Controller
 {
     //
@@ -24,6 +29,7 @@ class InstitucionController extends Controller
     {
         if ($request) {
             $query = trim($request->get('searchText'));
+
             $instituciones = DB::table('institucion')
                 ->where('nombre', 'LIKE', '%' . $query . '%')
                 ->orwhere('siglas','LIKE','%' .$query . '%')
@@ -35,14 +41,12 @@ class InstitucionController extends Controller
 
     public function create()
     {
+
         return view('institucion.create');
     }
 
     public function store(InstitucionFormRequest $request)
     {
-
-
-       
         $institucion = new Institucion;
         $institucion->Id_institucion= Utilidad::getId("institucion","Id_institucion");
  		$institucion->nombre= $request->get('nombre');
