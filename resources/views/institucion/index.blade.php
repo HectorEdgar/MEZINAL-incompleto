@@ -9,6 +9,7 @@
                 <a href="institucion/create"><button class="btn btn-success">Nuevo</button></a>
             </h3>
             @include('institucion.search')
+            
         </div>
     </div>
     <div class="row">
@@ -51,4 +52,5 @@
             {{$instituciones->render()}}
         </div>
     </div>
+
 @endsection

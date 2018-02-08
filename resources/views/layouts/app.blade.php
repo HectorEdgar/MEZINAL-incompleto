@@ -12,6 +12,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('css/select.css')}}">
+
 </head>
 <body>
     <div id="app">
@@ -76,5 +78,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{asset('js/select.js')}}"></script>
+
 </body>
 </html>

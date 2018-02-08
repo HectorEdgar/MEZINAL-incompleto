@@ -7,19 +7,29 @@
 
     <title>SISTEMA DE CATALOGACIÓN PUIC - UNAM</title>
     <!-- Bootstrap-->
-    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" type="text/css">
 
-    <link rel="stylesheet" href="{{asset('css/select.css')}}">
+    <link rel="stylesheet" href="{{asset('css/estiloAutocompletar.css')}}">
+    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" type="text/css">
+    <link href="{{asset('css/jquery.auto-complete.css')}}" rel="stylesheet">
+    <!-- Custom fonts for this template-->
+    <link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
 
     <!-- Custom styles for this template-->
 
     <link href="{{asset('css/sb-admin.min.css')}}" rel="stylesheet">
-    <link href="{{asset('css/paginador.css')}}" rel="stylesheet">
     <link href="{{asset('css/easy-autocomplete.min.css')}}" rel="stylesheet">
-    
+    @stack('scripts')
 
-    <!-- Custom fonts for this template-->
-<link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet" type="text/css"></head>
+    <script src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
+    <!-- Bootstrap-->
+    <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
+
+    <script src="{{asset('js/sb-admin.min.js')}}"></script>
+
+    <script src="{{asset('js/jquery.mockjax.js')}}"></script>
+    <script src="{{asset('js/jquery.auto-complete.min.js')}}"></script>
+
+</head>
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
@@ -233,16 +243,9 @@
 
 
     <!--STACK PERMITE UTILIZAR SCRIPTS PROPIOS-->
-    @stack('scripts')
+    
 
-    <script src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
-    <!-- Bootstrap-->
-    <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
-    <script src="{{asset('js/select.js')}}"></script>
 
-    <script src="{{asset('js/sb-admin.min.js')}}"></script>
-
-    <script src="{{asset('js/jquery.easy-autocomplete.min.js')}}"></script>
 </body>
 
 
