@@ -26,7 +26,7 @@ class EjeFormRequest extends FormRequest
         return [
             'nombre'=>'required|max:500',
             'area'=>'required|max:50',
-            'poblacion'=>'required|max:50'
+            'poblacion'=>'required|max:50',
             'descripcion'=>'required'
         ];
     }
