@@ -3,8 +3,6 @@
 .env
 .env
 .env
-<<<<<<< HEAD
-=======
 *.env
->>>>>>> f4cd12287cfd6b0a1305f1caece6d29578c850d7
+.env
 .env

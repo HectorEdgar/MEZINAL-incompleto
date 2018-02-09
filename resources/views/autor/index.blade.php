@@ -13,7 +13,6 @@
             
         </div>
     </div>
-
         <div class="table-responsive table-responsive-xl table-responsive-md table-responsive-lg table-responsive-sm">
             @include('autor.search')
             <table class="table table-hover table-sm ">
