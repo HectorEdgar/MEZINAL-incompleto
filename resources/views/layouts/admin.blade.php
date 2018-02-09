@@ -25,9 +25,9 @@
     <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
 
     <script src="{{asset('js/sb-admin.min.js')}}"></script>
+    <script src="{{asset('js/jquery.easy-autocomplete.min.js')}}"></script>
 
-    <script src="{{asset('js/jquery.mockjax.js')}}"></script>
-    <script src="{{asset('js/jquery.auto-complete.min.js')}}"></script>
+
 
 </head>
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">

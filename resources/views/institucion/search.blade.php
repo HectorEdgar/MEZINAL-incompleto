@@ -7,34 +7,31 @@
         </span>
     </div>
 </div>
-<div class="form-group">
-    <div class="input-group">
-<input id="hero-demo" autofocus type="text" name="q" placeholder="Programming languages ...">
-</div>
+
+
+
+<input type="text" id="text">
+<div id="basics" class="form-control"></div>
+<br>
+
 
 <script>
-        $(function(){
-            $('#hero-demo').autoComplete({
-                minChars: 0,
-                source: function(term, suggest){
-                    term = term.toLowerCase();
-                    var choices = [['Australia', 'au'], ['Austria', 'at'], ['Brasil', 'br'], ['Bulgaria', 'bg'], ['Canada', 'ca'], ['China', 'cn'], ['Czech Republic', 'cz'], ['Denmark', 'dk'], ['Finland', 'fi'], ['France', 'fr'], ['Germany', 'de'], ['Hungary', 'hu'], ['India', 'in'], ['Italy', 'it'], ['Japan', 'ja'], ['Netherlands', 'nl'], ['Norway', 'no'], ['Portugal', 'pt'], ['Romania', 'ro'], ['Russia', 'ru'], ['Spain', 'es'], ['Swiss', 'ch'], ['Turkey', 'tr'], ['USA', 'us']];
-                    var suggestions = [];
-                    for (i=0;i<choices.length;i++)
-                        if (~(choices[i][0]+' '+choices[i][1]).toLowerCase().indexOf(term)) suggestions.push(choices[i]);
-                    suggest(suggestions);
-                },
-                renderItem: function (item, search){
-                    search = search.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
-                    var re = new RegExp("(" + search.split(' ').join('|') + ")", "gi");
-                    return '<div class="autocomplete-suggestion" data-langname="'+item[0]+'" data-lang="'+item[1]+'" data-val="'+search+'"><img src="img/'+item[1]+'.png"> '+item[0].replace(re, "<b>$1</b>")+'</div>';
-                },
-                onSelect: function(e, term, item){
-                    console.log('Item "'+item.data('langname')+' ('+item.data('lang')+')" selected by '+(e.type == 'keydown' ? 'pressing enter or tab' : 'mouse click')+'.');
-                    $('#advanced-demo').val(item.data('langname')+' ('+item.data('lang')+')');
-                }
-            });
-        });
-    </script>
+$( "#text" ).keypress(function() {
+	search_data($( "#text" ).val());
+});
+
+function search_data(search_value) {
+    $.ajax({
+        url: '/institucion?searchText=' + search_value,
+        method: 'GET'
+    }).done(function(response){
+    	alert(response);
+        $('#basics').html(response); // put the returning html in the 'results' div
+    });
+}
+
+
+</script>
+
 
 {{Form::close()}}

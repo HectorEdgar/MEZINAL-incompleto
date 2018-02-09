@@ -25,17 +25,41 @@ class InstitucionController extends Controller
         $this->middleware('auth');
     }
 
+
+
+
+public function search($search = null) {
+    $search_text = $search;
+    if ($search_text==NULL) {
+        $data= DB::table('institucion')
+            ->select('Id_institucion','nombre')
+            ->orderBy('Id_institucion', 'desc')
+            ->get();
+    } else {
+        $data=DB::table('institucion')
+        ->where('nombre','LIKE', '%'.$search_text.'%')->get();
+    }
+    return view('results')->with('results',$data);
+}
+
+
     public function index(Request $request)
     {
         if ($request) {
             $query = trim($request->get('searchText'));
+
+
+            $instituciones2 =DB::table('institucion')
+            ->select('Id_institucion','nombre')
+            ->orderBy('Id_institucion', 'desc')
+            ->get();
 
             $instituciones = DB::table('institucion')
                 ->where('nombre', 'LIKE', '%' . $query . '%')
                 ->orwhere('siglas','LIKE','%' .$query . '%')
                 ->orderBy('Id_institucion', 'desc')
                 ->paginate(10);
-            return view('institucion.index', ['instituciones' => $instituciones, "searchText" => $query]);
+            return view('institucion.index', ['instituciones2' => json_encode($instituciones2),'instituciones' => $instituciones, "searchText" => $query]);
         }
     }
 
