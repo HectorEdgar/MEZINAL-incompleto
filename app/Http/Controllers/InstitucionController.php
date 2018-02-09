@@ -26,23 +26,6 @@ class InstitucionController extends Controller
     }
 
 
-
-
-public function search($search = null) {
-    $search_text = $search;
-    if ($search_text==NULL) {
-        $data= DB::table('institucion')
-            ->select('Id_institucion','nombre')
-            ->orderBy('Id_institucion', 'desc')
-            ->get();
-    } else {
-        $data=DB::table('institucion')
-        ->where('nombre','LIKE', '%'.$search_text.'%')->get();
-    }
-    return view('results')->with('results',$data);
-}
-
-
     public function index(Request $request)
     {
         if ($request) {
@@ -59,7 +42,16 @@ public function search($search = null) {
                 ->orwhere('siglas','LIKE','%' .$query . '%')
                 ->orderBy('Id_institucion', 'desc')
                 ->paginate(10);
-            return view('institucion.index', ['instituciones2' => json_encode($instituciones2),'instituciones' => $instituciones, "searchText" => $query]);
+
+            $json= $request->get('json');
+            if($json == '1'){
+                return response()->json(json_encode($instituciones2));
+            }
+            else{
+                return view('institucion.index',['instituciones' => $instituciones, "searchText" => $query]);
+            }
+
+            
         }
     }
 

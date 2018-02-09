@@ -10,28 +10,34 @@
 
 
 
-<input type="text" id="text">
-<div id="basics" class="form-control"></div>
+<input id="provider-json" type="text">
 <br>
 
-
 <script>
-$( "#text" ).keypress(function() {
-	search_data($( "#text" ).val());
+$( "#provider-json" ).keypress(function() {
+	search_data($( "#provider-json" ).val());
 });
 
 function search_data(search_value) {
     $.ajax({
-        url: '/institucion?searchText=' + search_value,
+        url: '/institucion?json=1&searchText=' + search_value,
         method: 'GET'
     }).done(function(response){
-    	alert(response);
-        $('#basics').html(response); // put the returning html in the 'results' div
-    });
+
+    	//alert(response);
+    	var options = {
+			data: response
+			//getValue:"{"
+			
+		};
+		
+
+		
+    	
+    
+	$("#provider-json").easyAutocomplete(options);
+  
+ 	});
 }
-
-
 </script>
-
-
 {{Form::close()}}
