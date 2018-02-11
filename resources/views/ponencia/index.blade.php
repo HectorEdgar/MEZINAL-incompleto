@@ -5,7 +5,7 @@
 		<h3>Listado de 	Ponencias  <a href="ponencia/create"><button class="btn btn-success">Nuevo</button></a></h3>
 
 		<!--ESTO ES COMO UNA MASTER PAGE-->
-		@include('editor.search')
+		@include('ponencia.search')
 	</div>
 </div>
 

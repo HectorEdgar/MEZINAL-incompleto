@@ -3,6 +3,7 @@
 namespace practicasUnam\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;  
 use practicasUnam\Http\Requests;
 use practicasUnam\Documento;
 use Illuminate\Support\Facades\Redirect;
@@ -10,6 +11,7 @@ use practicasUnam\Http\Requests\DocumentoFormRequest;
 use DB;
 use practicasUnam\Http\Controllers\Controller;
 use practicasUnam\Utilidad;
+use Illuminate\Support\Facades\Log;
 class DocumentoController extends Controller
 {
 
@@ -75,25 +77,22 @@ class DocumentoController extends Controller
       $documento->revisado = $request->get('revisado');
       $documento->linea = $request->get('linea');
 
-      $consulta = DB::table('documento')
-      ->where([
-        ['titulo', '=', $request->get('titulo')],
-        ['url', '=', $request->get('url')],
-    ])->get();
-    
-      if($consulta == null){
+      $consultaTitulo = DB::table('documento')
+      ->where('titulo', '=', $request->get('titulo'))->get();
 
-        $documento->save();
+      $consultaUrl = DB::table('documento')
+      ->where('url', '=', $request->get('url'))->get();
 
-      return Redirect::to('documento');
+     
 
-       
-
-      }else{
+      if(!$consultaTitulo->isEmpty()  && !$consultaUrl->isEmpty()){
 
         return Redirect::to('documento/create')->with('status', 'El documento ya se encuentra registrado!');
 
+      }else{
+        $documento->save();
 
+      return Redirect::to('documento');
       }
 
       

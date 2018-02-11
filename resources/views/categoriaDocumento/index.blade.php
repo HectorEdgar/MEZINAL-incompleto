@@ -5,7 +5,7 @@
 		<h3>Listado de 	Categorias <a href="categoriaDocumento/create"><button class="btn btn-success">Nuevo</button></a></h3>
 
 		<!--ESTO ES COMO UNA MASTER PAGE-->
-		@include('editor.search')
+		@include('categoriaDocumento.search')
 	</div>
 </div>
 

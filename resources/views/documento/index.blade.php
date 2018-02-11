@@ -5,7 +5,7 @@
 		<h3>Listado de 	Documentos <a href="documento/create"><button class="btn btn-success">Nuevo</button></a></h3>
 
 		<!--ESTO ES COMO UNA MASTER PAGE-->
-		@include('editor.search')
+		@include('documento.search')
 	</div>
 </div>
 
