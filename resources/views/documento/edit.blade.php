@@ -17,7 +17,7 @@
             {{Form::token()}}
             <div class="form-group">
             	<label for="tipo_doc">ID categoria</label>
-            	<input type="text" name="id_cata_doc" class="form-control" placeholder="Id" value="{{$categoriasDocumento->id_cata_doc}}">
+            	<input type="text" name="id_cata_doc" class="form-control" placeholder="Id" value="{{$categoriasDocumento->id_cata_doc}}" readonly>
             </div>
             <div class="form-group">
             	<label for="tipo_doc">Nombre de la categoria</label>

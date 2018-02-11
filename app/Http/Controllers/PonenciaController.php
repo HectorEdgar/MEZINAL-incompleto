@@ -48,6 +48,7 @@ class PonenciaController extends Controller
         $ponencia->evento = $request->get('evento');
         $ponencia->lugar_presentacion = $request->get('lugar_presentacion');
         $ponencia->fecha_pesentacion = $request->get('fecha_pesentacion');
+        $ponencia->paginas = $request->get('paginas');
 
         $ponencia->save();
 
@@ -69,6 +70,7 @@ class PonenciaController extends Controller
         $ponencia->evento = $request->get('evento');
         $ponencia->lugar_presentacion = $request->get('lugar_presentacion');
         $ponencia->fecha_pesentacion = $request->get('fecha_pesentacion');
+        $ponencia->paginas = $request->get('paginas');
         $ponencia->update();
         return Redirect::to('ponencia');
 

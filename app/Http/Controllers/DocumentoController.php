@@ -34,7 +34,7 @@ class DocumentoController extends Controller
                 ->orwhere('Id_doc', 'LIKE', '%' . $query . '%')
                 ->orderBy('Id_doc', 'desc')
                 ->paginate(10);
-            return view('documento.index', ['documentos' => $documento, "searchText" => $query]);
+            return view('documento.index', ['documento' => $documento, "searchText" => $query]);
         }
     }
 
@@ -59,6 +59,7 @@ class DocumentoController extends Controller
     {
       $documento = new Documento;
 
+      $documento->Id_doc= Utilidad::getId('documento','Id_doc');
       $documento->titulo = $request->get('titulo');
       $documento->lugar_public_pais = $request->get('lugar_public_pais');
       $documento->lugar_public_edo = $request->get('lugar_public_edo');
@@ -73,12 +74,29 @@ class DocumentoController extends Controller
       $documento->fecha_registro = $request->get('fecha_registro');
       $documento->revisado = $request->get('revisado');
       $documento->linea = $request->get('linea');
-     
 
+      $consulta = DB::table('documento')
+      ->where([
+        ['titulo', '=', $request->get('titulo')],
+        ['url', '=', $request->get('url')],
+    ])->get();
+    
+      if($consulta == null){
 
-      $documento->save();
+        $documento->save();
 
       return Redirect::to('documento');
+
+       
+
+      }else{
+
+        return Redirect::to('documento/create')->with('status', 'El documento ya se encuentra registrado!');
+
+
+      }
+
+      
     }
 
     /**

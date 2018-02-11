@@ -2,7 +2,7 @@
 @section ('contenido')
 	<div class="row">
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-			<h3>Nuevo DOcumento</h3>
+			<h3>Nuevo Documento</h3>
 			<!--VALIDACIONES DE LARAVEL
 			RULES HECHAS EN EL FORM REQUEST-->
 			@if (count($errors)>0)
@@ -13,6 +13,13 @@
 				@endforeach
 				</ul>
 			</div>
+			@endif
+
+
+			@if (session('status'))
+    			<div class="alert alert-danger">
+        		{{ session('status') }}
+   				 </div>
 			@endif
 
 			{!!Form::open(array('url'=>'documento','method'=>'POST','autocomplete'=>'off'))!!}

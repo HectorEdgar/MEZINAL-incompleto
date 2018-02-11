@@ -95,7 +95,7 @@
 
 <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
       <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-        <div class="card-header text-center">Categoria Documento</div>
+        <div class="card-header text-center">Catalogo</div>
         <div class="card-body">
           <h5 class="card-title">Categoria Documento</h5>
           <p class="card-text">Entra al catálogo de la tabla documento</p>
@@ -106,6 +106,8 @@
       </div>
     </div>
 </div>
+
+
 
 </div>
 

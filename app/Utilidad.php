@@ -15,7 +15,6 @@ class Utilidad
 
     public static function getCount($nombreTabla)
     {
-        return DB::table($nombreTabla)->count();
     }
     //Devuelve el id que le corresponde una nueva inserción dependiendo si hay huecos en la serie de id´s 
     //si hay huecos devuelve el id correspondiente al hueco ordenado de menor a mayor y si no devuelve el id mayor + 1 :´v
@@ -23,7 +22,7 @@ class Utilidad
     public static function getId($nombreTabla, $nombreId)
     {
         $maxId=Utilidad::getMaxId($nombreTabla, $nombreId);
-        $numeroRegistros = getCount($nombreTabla);
+        $numeroRegistros = DB::table($nombreTabla)->count();
 
         if($numeroRegistros==$maxId){
             return $maxId+1;
