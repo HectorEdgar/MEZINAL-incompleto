@@ -8,36 +8,4 @@
     </div>
 </div>
 
-
-
-<input id="provider-json" type="text">
-<br>
-
-<script>
-$( "#provider-json" ).keypress(function() {
-	search_data($( "#provider-json" ).val());
-});
-
-function search_data(search_value) {
-    $.ajax({
-        url: '/institucion?json=1&searchText=' + search_value,
-        method: 'GET'
-    }).done(function(response){
-
-    	//alert(response);
-    	var options = {
-			data: response
-			//getValue:"{"
-			
-		};
-		
-
-		
-    	
-    
-	$("#provider-json").easyAutocomplete(options);
-  
- 	});
-}
-</script>
 {{Form::close()}}
