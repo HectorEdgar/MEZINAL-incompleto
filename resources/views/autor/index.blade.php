@@ -19,7 +19,7 @@
             @include('autor.search')
         </div>
         <div class="col-auto">
-                <a href="autor/create"><button class="btn btn-success"><img length="30px" width="30px" src="{{asset('imgs/agregar.svg')}}"></img></button></a> 
+                <a href="autor/create"><button class="btn btn-success" title="Agregar"><img length="30px" width="30px" src="{{asset('imgs/agregar.svg')}}"></img></button></a> 
         </div>
         </div>
     </div>
@@ -46,10 +46,10 @@
                             <td class="text-center align-middle">{{$item ->apellidos}}</td>
                             <td class="text-center align-middle ">
                                 <a href="{{URL::action('AutorController@edit',$item ->Id_autor)}}">
-                                     <img length="30px" width="30px" src="{{asset('imgs/editar.svg')}}"></img>
+                                     <img length="30px" width="30px" src="{{asset('imgs/editar.svg')}}" title="Editar"></img>
                                 </a>
                                 <a href="" data-target="#modal-delete-{{$item->Id_autor}}" data-toggle="modal">
-                                    <img length="30px" width="30px" src="{{asset('imgs/eliminar.svg')}}"></img>
+                                    <img length="30px" width="30px" src="{{asset('imgs/eliminar.svg')}}" title="Eliminar"></img>
                                 </a>
                             </td>
                         </tr>
