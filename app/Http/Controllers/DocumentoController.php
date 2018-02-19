@@ -12,6 +12,8 @@ use DB;
 use practicasUnam\Http\Controllers\Controller;
 use practicasUnam\Utilidad;
 use Illuminate\Support\Facades\Log;
+use Carbon\Carbon;
+use Auth;       
 class DocumentoController extends Controller
 {
 
@@ -48,7 +50,13 @@ class DocumentoController extends Controller
     public function create()
     {
           $categorias=DB::table('catalogo_docu')->get();
-          return view('documento.create',['categorias' => $categorias]);
+
+          $categorias = $categorias->filter(function($item) { //funcion que quita elemnto con id 18 (Videos)
+            return $item->id_cata_doc != 16;
+        });
+         
+          $mesesFecha = array('nombre'=>'Enero', 'Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre');
+          return view('documento.create',['categorias' => $categorias,'mesesFecha'=> $mesesFecha]);
     }
 
     /**
@@ -68,31 +76,67 @@ class DocumentoController extends Controller
       $documento->derecho_autor = $request->get('derecho_autor');
       $documento->fecha_publi = $request->get('fecha_publi');
       $documento->url = $request->get('url');
-      $documento->investigador = $request->get('investigador');
+      $documento->investigador = Auth::user()->name;
       $documento->fecha_consulta = $request->get('fecha_consulta');
       $documento->poblacion = $request->get('poblacion');
       $documento->tipo = $request->get('tipo');
       $documento->notas = $request->get('notas');
-      $documento->fecha_registro = $request->get('fecha_registro');
-      $documento->revisado = $request->get('revisado');
-      $documento->linea = $request->get('linea');
+      $documento->fecha_registro =  Carbon::now();;
+      $documento->revisado = '0';
+      $documento->linea = '0';
+      Log::error($documento->notas);
+      if( $documento->notas ==null){
+        $documento->notas = '';
+
+
+      }
+      ///
 
       $consultaTitulo = DB::table('documento')
       ->where('titulo', '=', $request->get('titulo'))->get();
 
       $consultaUrl = DB::table('documento')
       ->where('url', '=', $request->get('url'))->get();
-
-     
+///
 
       if(!$consultaTitulo->isEmpty()  && !$consultaUrl->isEmpty()){
 
         return Redirect::to('documento/create')->with('status', 'El documento ya se encuentra registrado!');
 
       }else{
-        $documento->save();
+        DB::beginTransaction();
 
-      return Redirect::to('documento');
+        if($documento->save()){
+
+            if($documento->fecha_publi==1){
+                
+
+
+
+
+            }else{
+
+
+            }
+
+
+
+
+            DB::commit(); //se realiza el commit a la base. Guarda cambios
+            return Redirect::to('documento');
+
+
+
+
+        }else{
+
+            DB::rollback(); // rollback si no se guarda documento
+            return Redirect::to('documento/create')->with('status', 'Error al registrar documento');
+        }
+
+        //$documento->save();
+
+     
       }
 
       
@@ -129,25 +173,25 @@ class DocumentoController extends Controller
      */
     public function update(DocumentoFormRequest $request, $id)
     {
-       $documento = Documento::findOrFail($id);
-       $documento->titulo = $request->get('titulo');
-       $documento->lugar_public_pais = $request->get('lugar_public_pais');
-      $documento->lugar_public_edo = $request->get('lugar_public_edo');
-      $documento->derecho_autor = $request->get('derecho_autor');
-      $documento->fecha_publi = $request->get('fecha_publi');
-      $documento->url = $request->get('url');
-      $documento->investigador = $request->get('investigador');
-      $documento->fecha_consulta = $request->get('fecha_consulta');
-      $documento->poblacion = $request->get('poblacion');
-      $documento->tipo = $request->get('tipo');
-      $documento->notas = $request->get('notas');
-      $documento->fecha_registro = $request->get('fecha_registro');
-      $documento->revisado = $request->get('revisado');
-      $documento->linea = $request->get('linea');
-      $documento->catalogo_docu_id_cata_doc = $request->get('catalogo_docu_id_cata_doc');
+        $documento = Documento::findOrFail($id);
+        $documento->titulo = $request->get('titulo');
+        $documento->lugar_public_pais = $request->get('lugar_public_pais');
+        $documento->lugar_public_edo = $request->get('lugar_public_edo');
+        $documento->derecho_autor = $request->get('derecho_autor');
+        $documento->fecha_publi = $request->get('fecha_publi');
+        $documento->url = $request->get('url');
+        $documento->investigador = $request->get('investigador');
+        $documento->fecha_consulta = $request->get('fecha_consulta');
+        $documento->poblacion = $request->get('poblacion');
+        $documento->tipo = $request->get('tipo');
+        $documento->notas = $request->get('notas');
+        $documento->fecha_registro = $request->get('fecha_registro');
+        $documento->revisado = $request->get('revisado');
+        $documento->linea = $request->get('linea');
+        $documento->catalogo_docu_id_cata_doc = $request->get('catalogo_docu_id_cata_doc');
 
-      $documento->update();
-        return Redirect::to('documento');
+        $documento->update();
+            return Redirect::to('documento');
     }
 
     /**

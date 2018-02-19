@@ -35,10 +35,6 @@
             	<input type="text" name="lugar_public_pais" class="form-control" placeholder="País publicación">
             </div>
 
-
-
-
-
             <div class="form-group">
             	<label for="lugar_public_edo">Estado publicación </label>
             	<input type="text" name="lugar_public_edo" class="form-control" placeholder="Estado publicación ">
@@ -48,19 +44,74 @@
             	<label for="derecho_autor">Derechos autor</label>
 
            <select  name="derecho_autor" class="form-control">
-            	<option value="1">1</option>
-  				<option value="0">0</option>
+            	<option value="1">Si</option>
+  				<option value="0">No</option>
   			</select>
             </div>
+			
 
+			<div class="card w-90">
+			<h6 class="card-header">Fecha Publicación</h6>
+  			<div class="card-body">
             <div class="form-group">
-            	<label for="fecha_publi">Fecha publicación</label>
+				<div class="form-check">
+  					<input class="form-check-input fechaNormal" type="radio" name="fecha_publi" value="1" checked="checked">
+					  
+					<label class="form-check-label" for="fecha_publi">
+						Fecha de publicación Normal
+					</label>
+					<br/>
+					<p id="inFechaNormal"><input type="text"  placeholder="Fecha de publicación"></p>
+				</div>
+				<br/>
+				<div class="form-check">
+  					<input class="form-check-input fechaNormal" type="radio"  name="fecha_publi" value="2" >
+					<label class="form-check-label" for="fecha_publi">
+						Fecha de publicación por Período 
+					</label>
+					
+						<div class="form-row"  id="inFechaExtra" >
+    						<div class="form-group col-md-3">
 
-           <select  name="fecha_publi" class="form-control">
-            	<option value="1">1</option>
-  				<option value="0">0</option>
-  			</select>
+      							<label for="fechaExtraMes">Del mes</label>
+      							<select id="fechaExtraMes" class="form-control" name="fechaExtraMes">
+								  @foreach ($mesesFecha as $value)
+
+           	 					<option value="{{ $value }}" >{{$value}}</option>
+									
+									@endforeach
+        				
+
+      							</select>
+    						</div>
+
+							<div class="form-row"  >
+    						<div class="form-group col-md-4">
+      							<label for="fechaExtraAlMes">Al mes </label>
+      							<select id="fechaExtraAlMes" class="form-control">
+								  @foreach ($mesesFecha as $value)
+
+           	 					<option value="{{ $value }}" >{{$value}}</option>
+									
+									@endforeach
+        						
+      							</select>
+    						</div>
+
+    						<div class="form-group col-md-3" >
+      							<label for="fechaExtraAño">Año</label>
+								<input type="text" class="form-control" id="fechaExtraAlMes">
+							</div>
+						</div>
+					
+					
+				
+
+				</div>
             </div>
+			</div>
+			</div>
+			</div>
 
             <div class="form-group">
             	<label for="url">Url</label>
@@ -69,10 +120,7 @@
 
             
 
-            <div class="form-group">
-            	<label for="investigador">Investigador</label>
-            	<input type="text" name="investigador" class="form-control" placeholder="Investigador">
-            </div>
+            
 
             <div class="form-group">
             	<label for="fecha_consulta">Fecha consulta</label>
@@ -81,9 +129,20 @@
 
             <div class="form-group">
             	<label for="poblacion">Población</label>
-            	<input type="number" name="poblacion" class="form-control" placeholder="Población" min="0">
-            </div>
 
+				<select  name="poblacion" class="form-control">
+           	 
+
+           	 		<option value="0" >Ninguno</option>
+					<option value="1" >Afrodescendiente</option>
+					<option value="2" >Indígena</option>
+					<option value="3" >Ambos</option>
+
+            
+
+  			</select>
+            	
+            </div>
 
             <div class="form-group">
             	<label for="tipo">Tipo</label>
@@ -107,29 +166,9 @@
 				</div>
             </div>
 
-             <div class="form-group">
-            	<label for="fecha_registro">Fecha registro</label>
-            	<input type="datetime-local" name="fecha_registro" class="form-control" placeholder="Fecha consulta">
-            </div>
+             
 
-            <div class="form-group">
-            	<label for="revisado">Revisado</label>
-
-           <select  name="revisado" class="form-control">
-            	<option value="1">1</option>
-  				<option value="0">0</option>
-  			</select>
-            </div>
-
-
-            <div class="form-group">
-            	<label for="linea">Linea</label>
-
-           <select  name="linea" class="form-control">
-            	<option value="1">1</option>
-  				<option value="0">0</option>
-  			</select>
-            </div>
+            
 
 
 
@@ -143,4 +182,28 @@
             
 		</div>
 	</div>
+
+	<script type="text/javascript">
+	 
+
+	$(document).ready(function(){
+		$("#inFechaExtra").hide();
+		  
+        $(".fechaNormal").click(function(evento){
+          
+            var valor = $(this).val();
+          
+            if(valor == 1){
+                $("#inFechaNormal").show();
+                $("#inFechaExtra").hide();
+            }else{
+                $("#inFechaNormal").hide();
+                $("#inFechaExtra").show();
+            }
+    });
+});
+
+      
+	</script>
+
 @endsection
