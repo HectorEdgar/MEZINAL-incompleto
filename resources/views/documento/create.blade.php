@@ -61,7 +61,7 @@
 						Fecha de publicación Normal
 					</label>
 					<br/>
-					<p id="inFechaNormal"><input type="text"  placeholder="Fecha de publicación"></p>
+					<p id="inFechaNormal"><input type="date"  placeholder="Fecha de publicación" name="fechaNormalValor" id="fechaNormalValor" /></p>
 				</div>
 				<br/>
 				<div class="form-check">
@@ -88,7 +88,7 @@
 							<div class="form-row"  >
     						<div class="form-group col-md-4">
       							<label for="fechaExtraAlMes">Al mes </label>
-      							<select id="fechaExtraAlMes" class="form-control">
+      							<select id="fechaExtraAlMes" class="form-control" name="fechaExtraAlMes">
 								  @foreach ($mesesFecha as $value)
 
            	 					<option value="{{ $value }}" >{{$value}}</option>
@@ -100,7 +100,7 @@
 
     						<div class="form-group col-md-3" >
       							<label for="fechaExtraAño">Año</label>
-								<input type="text" class="form-control" id="fechaExtraAlMes">
+								<input type="number" class="form-control" id="fechaExtraAño" min="1600" name="fechaExtraAño">
 							</div>
 						</div>
 					
@@ -196,9 +196,12 @@
             if(valor == 1){
                 $("#inFechaNormal").show();
                 $("#inFechaExtra").hide();
+				$("#fechaExtraAño").prop('required',false);
+
             }else{
                 $("#inFechaNormal").hide();
                 $("#inFechaExtra").show();
+				$("#fechaExtraAño").prop('required',true);
             }
     });
 });

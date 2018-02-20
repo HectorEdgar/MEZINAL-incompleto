@@ -6,8 +6,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Collection;  
 use practicasUnam\Http\Requests;
 use practicasUnam\Documento;
+use practicasUnam\FechaNormal;
+use practicasUnam\FechaExtra;
 use Illuminate\Support\Facades\Redirect;
 use practicasUnam\Http\Requests\DocumentoFormRequest;
+use practicasUnam\Http\Requests\FechaNormalFormRequest;
+use practicasUnam\Http\Requests\FechaExtraFormRequest;
+
 use DB;
 use practicasUnam\Http\Controllers\Controller;
 use practicasUnam\Utilidad;
@@ -98,7 +103,7 @@ class DocumentoController extends Controller
       $consultaUrl = DB::table('documento')
       ->where('url', '=', $request->get('url'))->get();
 ///
-
+    $idDocumento =  Utilidad::getId('documento','Id_doc');
       if(!$consultaTitulo->isEmpty()  && !$consultaUrl->isEmpty()){
 
         return Redirect::to('documento/create')->with('status', 'El documento ya se encuentra registrado!');
@@ -106,23 +111,54 @@ class DocumentoController extends Controller
       }else{
         DB::beginTransaction();
 
+      
+        $fechaNormal = null;
+        $fechaExtra = null;
         if($documento->save()){
 
             if($documento->fecha_publi==1){
+
+                $fechaNormal = new FechaNormal;
+                $fechaNormal->fk_doc = $idDocumento; //referencia id doc a la fecha normal
+                $fechaNormal->fecha =  $request->get('fechaNormalValor');
+                if($fechaNormal->fecha ==null){
+
+                    $fechaNormal->fecha =  '0001-01-01';
+
+
+                }
+                $fechaNormal->save();
                 
-
-
-
+               
 
             }else{
+
+                $fechaExtra = new FechaExtra;
+                $fechaExtra->id_fx = $idDocumento; //referencia id doc a la fecha extra
+                $fechaExtra->mes =  $request->get('fechaExtraMes');
+                $fechaExtra->mes2 =  $request->get('fechaExtraAlMes');
+                $fechaExtra->anio =  $request->get('fechaExtraAño');
+
+                $fechaExtra->save();
 
 
             }
 
+            // if($fechaNormal->save() || $fechaExtra->save() ){
+
+            //     DB::commit(); //se realiza el commit a la base. Guarda cambios
+            //     return Redirect::to('documento');
+
+            // }else{
+
+            //     DB::rollback(); // rollback si no se guarda documento
+            //     return Redirect::to('documento/create')->with('status', 'Error al registrar documento');
 
 
+            // }
 
-            DB::commit(); //se realiza el commit a la base. Guarda cambios
+
+          //  DB::commit(); //se realiza el commit a la base. Guarda cambios
             return Redirect::to('documento');
 
 
