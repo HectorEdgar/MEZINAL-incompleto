@@ -1,7 +1,6 @@
 <?php
 
 namespace practicasUnam\Http\Controllers;
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;  
 use practicasUnam\Http\Requests;
@@ -12,7 +11,6 @@ use Illuminate\Support\Facades\Redirect;
 use practicasUnam\Http\Requests\DocumentoFormRequest;
 use practicasUnam\Http\Requests\FechaNormalFormRequest;
 use practicasUnam\Http\Requests\FechaExtraFormRequest;
-
 use DB;
 use practicasUnam\Http\Controllers\Controller;
 use practicasUnam\Utilidad;
@@ -89,7 +87,7 @@ class DocumentoController extends Controller
       $documento->fecha_registro =  Carbon::now();;
       $documento->revisado = '0';
       $documento->linea = '0';
-      Log::error($documento->notas);
+
       if( $documento->notas ==null){
         $documento->notas = '';
 
@@ -227,7 +225,7 @@ class DocumentoController extends Controller
         $documento->catalogo_docu_id_cata_doc = $request->get('catalogo_docu_id_cata_doc');
 
         $documento->update();
-            return Redirect::to('documento');
+        return Redirect::to('documento');
     }
 
     /**
@@ -239,7 +237,19 @@ class DocumentoController extends Controller
     public function destroy($id)
     {
       $documento=Documento::findOrFail($id);
+
+      Utilidad::deleteFromTable('fecha','fk_doc',$id);
+      Utilidad::deleteFromTable('fecha_extra','id_fx',$id);
+
+      
+
+
+
+
+    
+      
       $documento->delete();
-        return Redirect::to('documento');
+
+      return Redirect::to('documento');
     }
 }

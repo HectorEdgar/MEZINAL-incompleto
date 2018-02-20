@@ -14,7 +14,7 @@ class FechaNormal extends Model
 
 	protected $fillable =[
 		'fecha',
-		'id_fx'
+		'fk_doc'
 	]; 
 
 	const UPDATED_AT = null;

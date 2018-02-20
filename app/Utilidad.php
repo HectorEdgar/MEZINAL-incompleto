@@ -41,4 +41,19 @@ class Utilidad
         }
         
     }
+
+
+    public static  function deleteFromTable($tabla,$campo,$valor){
+
+        if(DB::table($tabla)->where($campo, '=', $valor)!=null){
+
+            DB::table($tabla)->where($campo, '=', $valor)->delete();
+
+        }
+        
+
+
+
+    }
+
 }
