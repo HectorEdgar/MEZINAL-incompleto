@@ -184,7 +184,7 @@ class DocumentoController extends Controller
      */
     public function show($id)
     {
-       return view('documento.show', ["documento" => Documento::findOrFail($id)]);
+       return view('documento.verDetalle', ["documento" => Documento::findOrFail($id)]);
     }
 
     /**
@@ -197,7 +197,6 @@ class DocumentoController extends Controller
     {
         return view('documento.edit', ["documento" => Documento::findOrFail($id)]);
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -240,13 +239,6 @@ class DocumentoController extends Controller
 
       Utilidad::deleteFromTable('fecha','fk_doc',$id);
       Utilidad::deleteFromTable('fecha_extra','id_fx',$id);
-
-      
-
-
-
-
-    
       
       $documento->delete();
 

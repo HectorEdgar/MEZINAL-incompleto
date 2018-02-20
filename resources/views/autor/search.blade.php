@@ -3,7 +3,7 @@
     <div class="input-group">
         <input type="text" name="searchText" class="form-control" placeholder="Buscar..." value="{{$searchText}}">
         <span class="input-group-btn">
-            <button type="submit" class="btn btn-primary"><img length="30px" width="30px" src="{{asset('imgs/buscar.svg')}}"></img></button>
+            <button type="submit" class="btn btn-outline-info"><img length="30px" width="30px" src="{{asset('imgs/buscar.svg')}}"></img></button>
         </span>
     </div>
 

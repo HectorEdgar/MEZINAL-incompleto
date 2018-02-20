@@ -33,15 +33,20 @@
 					<td>{{ $doc->lugar_public_pais}}</td>
 					<td>{{ $doc->lugar_public_edo}}</td>
 					<td>{{ $doc->fecha_publi}}</td>
-					<td>{{ $doc->url}}</td>
+					<td><a href="{{ $doc->url}}">{{ $doc->url}}</a></td>
 					<td>{{ $doc->investigador}}</td>
 					<td>{{ $doc->fecha_consulta}}</td>
 					<td>{{ $doc->fecha_registro}}</td>
-
-
 					<td>
-						<a href="{{URL::action('DocumentoController@edit',$doc->Id_doc)}}"><button class="btn btn-info">Editar</button></a>
-                         <a href="" data-target="#modal-delete-{{$doc->Id_doc}}" data-toggle="modal"><button class="btn btn-danger">Eliminar</button></a>
+							<a href="{{URL::action('DocumentoController@edit',$doc->Id_doc)}}">
+							<img length="30px" width="30px" src="{{asset('imgs/editar.svg')}}" title="Editar"></img>
+							</a>
+							<a href="" data-target="#modal-delete-{{$doc->Id_doc}}" data-toggle="modal">
+							<img length="30px" width="30px" src="{{asset('imgs/eliminar.svg')}}" title="Eliminar"></img>
+							</a>
+							<a href="{{URL::action('DocumentoController@show',$doc->Id_doc)}}">
+							<img length="30px" width="30px" src="{{asset('imgs/ver.svg')}}" title="Ver Detalle"></img>
+							</a>
 					</td>
 				</tr>
 				@include('Documento.modal')

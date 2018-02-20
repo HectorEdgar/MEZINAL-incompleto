@@ -19,7 +19,8 @@
             @include('autor.search')
         </div>
         <div class="col-auto">
-                <a href="autor/create"><button class="btn btn-success" title="Agregar"><img length="30px" width="30px" src="{{asset('imgs/agregar.svg')}}"></img></button></a> 
+                <a href="autor/create"><button type="button" class="btn btn-outline-success">
+                    <img length="30px" width="30px" src="{{asset('imgs/agregar.svg')}}"></img></button></a> 
         </div>
         </div>
     </div>

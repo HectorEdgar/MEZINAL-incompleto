@@ -6,28 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>SISTEMA DE CATALOGACIÓN PUIC - UNAM</title>
-    <!-- Bootstrap-->
-
-    <link rel="stylesheet" href="{{asset('css/estiloAutocompletar.css')}}">
-    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" type="text/css">
-    <link href="{{asset('css/jquery.auto-complete.css')}}" rel="stylesheet">
-    <!-- Custom fonts for this template-->
-    <link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
-
-    <!-- Custom styles for this template-->
-
-    <link href="{{asset('css/sb-admin.min.css')}}" rel="stylesheet">
-    <link href="{{asset('css/easy-autocomplete.min.css')}}" rel="stylesheet">
-    @stack('scripts')
-
-    <script src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
-    <!-- Bootstrap-->
-    <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
-
-    <script src="{{asset('js/sb-admin.min.js')}}"></script>
-    <script src="{{asset('js/jquery.easy-autocomplete.min.js')}}"></script>
-
-
+ <!-- Bootstrap-->
+ <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+ <!-- Custom styles for this template-->
+ <link href="{{asset('css/sb-admin.min.css')}}" rel="stylesheet">
+ <!-- Custom fonts for this template-->
+ <link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
+ <link href="{{asset('css/estiloLibre.css')}}" rel="stylesheet" type="text/css">
 
 </head>
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
@@ -42,6 +27,23 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+
+                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+                            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#Autor" data-parent="#exampleAccordion">
+                                <i class="fa fa-fw fa-wrench"></i>
+                                <span class="nav-link-text">Documento</span>
+                            </a>
+                            <ul class="sidenav-second-level collapse" id="Autor">
+                                <li>
+                                    <a href="/documento">Ver Documento</a>
+                                </li>
+                                <li>
+                                    <a href="/documento/create">Crear Documento</a>
+                                </li>
+                            </ul>
+                        </li>
+
+
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
                     <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#Autor" data-parent="#exampleAccordion">
                         <i class="fa fa-fw fa-wrench"></i>
@@ -240,10 +242,12 @@
         </div>
     </footer>
     <!-- jQuery-->
-
+    <script src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
+    <!-- Bootstrap-->
+    <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('js/sb-admin.min.js')}}"></script>
 
     <!--STACK PERMITE UTILIZAR SCRIPTS PROPIOS-->
-    
 
 
 </body>
