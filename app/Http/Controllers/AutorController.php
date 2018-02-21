@@ -33,11 +33,18 @@ class AutorController extends Controller
             if($page==null){
                 $page=1;
             }
+            $numeroRegistros= DB::table('autor')
+                ->where('nombre', 'LIKE', '%' . $query . '%')
+                ->orwhere('apellidos', 'LIKE', '%' . $query . '%')
+                ->orwhere('pseudonimo', 'LIKE', '%' . $query . '%')
+                ->orwhere('Id_autor', 'LIKE', '%' . $query . '%')
+                ->orderBy('Id_autor', 'desc')->count();
+
             return view('autor.index', 
                 [
                     'autores' => $autores, 
                     "searchText" => $query,
-                    "totalRegistros"=>Utilidad::getCount("autor"),
+                    "totalRegistros"=> $numeroRegistros,
                     "page"=> $page
                 ]
             );
