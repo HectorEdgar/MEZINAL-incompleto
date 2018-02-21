@@ -184,7 +184,63 @@ class DocumentoController extends Controller
      */
     public function show($id)
     {
-       return view('documento.verDetalle', ["documento" => Documento::findOrFail($id)]);
+        $documento =Documento::findOrFail($id);
+        $actoresSociales = DB::table('persona as p')
+        ->join('cntrl_persona as cp','cp.fk_persona',"=",'p.Id_persona')
+        ->join('documento as d','d.Id_doc',"=",'cp.fk_doc')
+        ->where('fk_doc',$documento->Id_doc)
+        ->get();
+
+        $instituciones =DB::table('institucion as i')
+        ->join('cntrl_Instit as cp','cp.fk_instit',"=",'i.Id_institucion')
+        ->join('documento as d','d.Id_doc',"=",'cp.fk_doc')
+        ->where('fk_doc',$documento->Id_doc)
+        ->get();
+
+        $temas =DB::table('temas as t')
+        ->join('cntrl_tema as cp','cp.fk_tema',"=",'t.id_tema')
+        ->join('documento as d','d.Id_doc',"=",'cp.fk_doc')
+        ->where('fk_doc',$documento->Id_doc)
+        ->get();
+
+        $lugares =DB::table('lugar as l')
+        ->join('cntrl_lugar as cp','cp.fk_lugar',"=",'l.id_lugar')
+        ->join('paises as p','p.id_pais',"=",'l.pais')
+        ->join('region as r','r.id_region',"=",'l.region_geografica')
+        ->join('documento as d','d.Id_doc',"=",'cp.fk_doc')
+        ->select('l.id_lugar as id','l.ubicacion as ubicacion','p.nombre as pais' ,'r.nombrereg as region')
+        ->where('fk_doc',$documento->Id_doc)
+        ->get();
+
+        $subtemas =DB::table('subtema as sub')
+        ->join('cntrl_sub as cp','cp.fk_sub',"=",'sub.id_sub')
+        ->join('documento as d','d.Id_doc',"=",'cp.fk_doc')
+        ->where('fk_doc',$documento->Id_doc)
+        ->get();
+
+        $obras =DB::table('obras as obra')
+        ->join('obra_doc as cp','cp.fk_obra',"=",'obra.id_obra')
+        ->join('documento as d','d.Id_doc',"=",'cp.fk_doc')
+        ->where('fk_doc',$documento->Id_doc)
+        ->get();
+
+        $autores =DB::table('autor as a')
+        ->join('cntrl_autor as ca','ca.fk_autor',"=",'a.Id_autor')
+        ->join('documento as d','d.Id_doc',"=",'ca.fk_doc')
+        ->where('fk_doc',$documento->Id_doc)
+        ->get();
+
+       return view('documento.verDetalle', [
+           "documento" => $documento,
+           "actoresSociales"=>$actoresSociales,
+           "instituciones"=>$instituciones,
+           "temas"=>$temas,
+           "lugares"=>$lugares,
+           "subtemas"=>$subtemas,
+           "obras"=>$obras,
+           "autores"=>$autores
+           
+           ]);
     }
 
     /**
