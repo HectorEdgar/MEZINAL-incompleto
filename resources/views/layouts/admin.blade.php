@@ -33,7 +33,7 @@
                                 <i class="fa fa-fw fa-wrench"></i>
                                 <span class="nav-link-text">Documento</span>
                             </a>
-                            <ul class="sidenav-second-level collapse" id="Autor">
+                            <ul class="sidenav-second-level collapse" id="Documento">
                                 <li>
                                     <a href="/documento">Ver Documento</a>
                                 </li>
@@ -87,11 +87,11 @@
                     </ul>
                 </li>
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
-                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
+                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#Editor" data-parent="#exampleAccordion">
                         <i class="fa fa-fw fa-file"></i>
                         <span class="nav-link-text">Editor</span>
                     </a>
-                    <ul class="sidenav-second-level collapse" id="collapseExamplePages">
+                    <ul class="sidenav-second-level collapse" id="Editor">
                         <li>
                             <a href="/editor">Ver Editores</a>
                         </li>
