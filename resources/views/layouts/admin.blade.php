@@ -29,7 +29,7 @@
             <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
 
                     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
-                            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#Autor" data-parent="#exampleAccordion">
+                            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#Documento" data-parent="#exampleAccordion">
                                 <i class="fa fa-fw fa-wrench"></i>
                                 <span class="nav-link-text">Documento</span>
                             </a>
