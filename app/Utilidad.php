@@ -46,10 +46,10 @@ class Utilidad
 
     public static  function deleteFromTable($tabla,$campo,$valor){
 
-        if(DB::table($tabla)->where($campo, '=', $valor)!=null){
+        $consulta = DB::table($tabla)->where($campo, '=', $valor);
 
-            DB::table($tabla)->where($campo, '=', $valor)->delete();
-
+        if($consulta !=null){
+            $consulta->delete();
         }
     }
 }
