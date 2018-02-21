@@ -15,6 +15,7 @@ class Utilidad
 
     public static function getCount($nombreTabla)
     {
+         return DB::table($nombreTabla)->count();
     }
     //Devuelve el id que le corresponde una nueva inserción dependiendo si hay huecos en la serie de id´s 
     //si hay huecos devuelve el id correspondiente al hueco ordenado de menor a mayor y si no devuelve el id mayor + 1 :´v
@@ -50,10 +51,5 @@ class Utilidad
             DB::table($tabla)->where($campo, '=', $valor)->delete();
 
         }
-        
-
-
-
     }
-
 }
