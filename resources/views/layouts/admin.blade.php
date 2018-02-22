@@ -28,7 +28,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
 
-                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Documento">
                             <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#Documento" data-parent="#exampleAccordion">
                                 <i class="fa fa-fw fa-wrench"></i>
                                 <span class="nav-link-text">Documento</span>
@@ -44,7 +44,7 @@
                         </li>
 
 
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Autor">
                     <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#Autor" data-parent="#exampleAccordion">
                         <i class="fa fa-fw fa-wrench"></i>
                         <span class="nav-link-text">Autor</span>
@@ -58,7 +58,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tema">
                     <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#Tema" data-parent="#exampleAccordion">
                         <i class="fa fa-fw fa-wrench"></i>
                         <span class="nav-link-text">Tema</span>
@@ -72,7 +72,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Eje">
                     <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#Eje" data-parent="#exampleAccordion">
                         <i class="fa fa-fw fa-wrench"></i>
                         <span class="nav-link-text">Eje</span>
@@ -86,7 +86,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Editor">
                     <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#Editor" data-parent="#exampleAccordion">
                         <i class="fa fa-fw fa-file"></i>
                         <span class="nav-link-text">Editor</span>
