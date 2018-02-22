@@ -185,6 +185,90 @@ class DocumentoController extends Controller
     public function show($id)
     {
         $documento =Documento::findOrFail($id);
+
+
+        //TIPO DE DOCUMENTO
+             if($documento->tipo==1)
+            $tipoConsulta = 'Articulo';
+        else if ($documento->tipo==2)
+            $tipoConsulta = 'Boletines';
+        else if ($documento->tipo==3)
+            $tipoConsulta = 'Cartas y Oficios';
+        else if ($documento->tipo==4)
+            $tipoConsulta = 'Cronicas';
+        else if ($documento->tipo==5)
+            $tipoConsulta = 'Declaraciones y Comunicados';
+        else if ($documento->tipo==6)
+            $tipoConsulta = 'Discursos';
+        else if ($documento->tipo==7)
+            $tipoConsulta = 'Informes';
+        else if ($documento->tipo==8)
+            $tipoConsulta = 'Libros';
+        else if ($documento->tipo==9)
+            $tipoConsulta = 'Notas';
+        else if ($documento->tipo==10)
+            $tipoConsulta = 'Ponencias';
+        else if ($documento->tipo==11)
+            $tipoConsulta = 'Proyectos';
+        else if ($documento->tipo==12)
+            $tipoConsulta = 'Otros';
+        else if ($documento->tipo==13)
+            $tipoConsulta = 'Tesis';
+        else if ($documento->tipo==14)
+            $tipoConsulta = 'Articulo de Revista';
+        else if ($documento->tipo==15)
+            $tipoConsulta = 'Capitulo de Libros';
+        else if ($documento->tipo==16)
+            $tipoConsulta = 'Videos';
+        else if ($documento->tipo==17)
+            $tipoConsulta = 'Revistas';
+        else if ($documento->tipo==18)
+            $tipoConsulta = 'Articulos de Boletín';
+        else if($documento==null)
+             $tipoConsulta = '- - - - - - -';
+
+        //LUGAR DE PUBLICACION
+        $lugarPublicacion=$documento->lugar_public_edo . " " . $documento->lugar_public_pais;
+
+        //DERECHOS DE AUTOR
+        if($documento->derecho_autor==0)
+            $derecho_autorConsulta = 'No';
+        else if ($documento->derecho_autor==1)
+            $derecho_autorConsulta = 'Si';
+        
+        //NOTAS
+        if($documento->notas=='')
+            $notas = '- - - - - - - -';
+        else
+            $notas = $documento->notas;
+
+        
+        //POBLACION
+        if ($documento->poblacion==1)
+        $poblacion = 'Afrodescendiente';
+        else if ($documento->poblacion==2)
+        $poblacion = 'Indígena';
+        else if ($documento->poblacion==3)
+        $poblacion = 'Afrodescendiente e Indígena';
+        else if ($documento->poblacion==0)
+        $poblacion = 'Sin población asignada';
+
+        //ESTADO DE LA REVISION
+        if ($documento->revisado==0)
+        $revisado= ' Referencia Pendiente de revisión';
+        else if ($documento->revisado==1)
+        $revisado= ' Referencia Revisada';
+                               
+        //PUBLICADO
+
+        if($documento->linea=1)
+        $linea='En Linea';
+        else
+        $linea='No establecido';
+                               
+
+               
+
         $actoresSociales = DB::table('persona as p')
         ->join('cntrl_persona as cp','cp.fk_persona',"=",'p.Id_persona')
         ->join('documento as d','d.Id_doc',"=",'cp.fk_doc')
@@ -230,15 +314,50 @@ class DocumentoController extends Controller
         ->where('fk_doc',$documento->Id_doc)
         ->get();
 
+        $editores =DB::table('editor as e')
+        ->join('cntrl_editor as ce','ce.fk_editor',"=",'e.Id_editor')
+        ->join('documento as d','d.Id_doc',"=",'ce.fk_doc')
+        ->where('fk_doc',$documento->Id_doc)
+        ->get();
+
+        $fecha =DB::table('documento as d')
+        ->join('fecha as ce','ce.fk_doc',"=",'d.Id_doc')
+        ->where('fk_doc',$documento->Id_doc)
+        ->select('ce.fecha as fecha')
+        ->get();
+
+        //Fecha 
+        foreach ($fecha as $f) {
+            $fechaVerdadera = $f->fecha;
+        }
+
+        $proyectos =DB::table('catalogo_proyecto as cat')
+        ->join('cntrl_proyec as cp','cp.fk_proyec',"=",'cat.id_proyecto')
+        ->join('documento as d','d.Id_doc',"=",'cp.fk_doc')
+        ->select('cat.proyecto as proyecto','cat.id_proyecto as id')
+        ->where('fk_doc',$documento->Id_doc)
+        ->get();
+
        return view('documento.verDetalle', [
            "documento" => $documento,
+           "tipo"=>$tipoConsulta,
+           "derechos" => $derecho_autorConsulta,
+           "lugarPublicacion"=>$lugarPublicacion,
+           "notas"=>$notas,
+           "poblacion"=>$poblacion,
+           "revisado"=>$revisado,
+           "linea"=>$linea,
            "actoresSociales"=>$actoresSociales,
            "instituciones"=>$instituciones,
            "temas"=>$temas,
            "lugares"=>$lugares,
            "subtemas"=>$subtemas,
            "obras"=>$obras,
-           "autores"=>$autores
+           "autores"=>$autores,
+           "editores"=>$editores,
+           "proyectos"=>$proyectos,
+           "fecha"=>$fechaVerdadera
+
            
            ]);
     }

@@ -44,20 +44,17 @@
                           </tr>
                           <tr>
                                 <th>Tipo de Documento</th>
-                                <td> {{$documento->titulo}}</td>
+                                <td>{{$tipo}}
+                                
                           </tr>
                           <tr>
                                 <th>Lugar de Publicación</th>
-                                <td>{{$documento->lugar_public_edo}} , {{$documento->lugar_public_pais}}</td>
+                                <td>{{$lugarPublicacion}}</td>
                           </tr>
                           <tr>
                                 <th>Derecho</th>
-                                @if ($documento->derecho_autor==0)
-                                <td> No tiene derechos de autor</td>
-                                @endif
-                                @if ($documento->derecho_autor==1)
-                                <td> Si tiene derechos de Autor</td>
-                                @endif
+                                <td>{{$derechos}}</td>
+                             
                           </tr>
                           <tr>
                                 <th>Investigador</th>
@@ -83,11 +80,19 @@
                                
                           <tr>
                                 <th>Editor</th>
-                                <td> {{$documento->lugar_public_pais}}</td>
+                                @if (count($editores)==0)
+                                <td>Sin Editores vinculados</td>
+                              @else
+                              <td>
+                                @foreach ($editores as $editor)
+                                   ( {{$editor->id_editor}}) {{$editor->editor}} <br>   
+                                @endforeach 
+                                </td>
+                                @endif
                           </tr>
                           <tr>
                                 <th>Fecha de Publicación</th>
-                                <td> {{$documento->fecha_publi}}</td>
+                                <td> {{$fecha}}</td>
                           </tr>
                           <tr>
                                 <th>Fecha de Consulta</th>
@@ -99,23 +104,32 @@
                           </tr>
                           <tr>
                                 <th>Notas</th>
-                                <td> {{$documento->lugar_public_pais}}</td>
+                                <td> {{$notas}}</td>
                           </tr>
                           <tr>
                                 <th>Población</th>
-                                <td> {{$documento->lugar_public_pais}}</td>
+                                <td>{{$poblacion}}</td>
+                               
+
                           </tr>
                           <tr>
                                 <th>Proyecto</th>
-                                <td> {{$documento->lugar_public_pais}}</td>
+                                @if ($proyectos=='')
+                                <td>Sin Proyectos</td>
+                                @else
+                                @foreach ($proyectos as $pro)
+                                <td> {{$pro->proyecto}}</td>
+                                @endforeach
+                                @endif
                           </tr>
                           <tr>
                                 <th>Estado de Revisión</th>
-                                <td> {{$documento->lugar_public_pais}}</td>
+                                <td>{{$revisado}}
+                                
                           </tr>
                           <tr>
                                 <th>Publicado</th>
-                                <td> {{$documento->lugar_public_pais}}</td>
+                                <td> {{$linea}}</td>
                           </tr>
                       </table>
 
