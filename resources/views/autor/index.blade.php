@@ -23,13 +23,13 @@
 
     <div class="container">
        <div class="row">
-        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
-            @include('autor.search')
-        </div>
-        <div class="col-auto">
-                <a href="autor/create"><button type="button" class="btn btn-outline-success">
-                    <img length="30px" width="30px" src="{{asset('imgs/agregar.svg')}}"></img></button></a> 
-        </div>
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                @include('autor.search')
+            </div>
+            <div class="col-auto">
+                    <a href="autor/create"><button type="button" class="btn btn-outline-success">
+                        <img length="30px" width="30px" src="{{asset('imgs/agregar.svg')}}"></img></button></a> 
+            </div>
         </div>
     </div>
         <div class="table-responsive table-responsive-xl table-responsive-md table-responsive-lg table-responsive-sm">        
@@ -67,8 +67,8 @@
                 </tbody>
             </table>
             {{$autores->render()}}
-            {{$totalRegistros}}
+           
             @include('autor.paginador')
-    </div>
+        </div>
 
 @endsection

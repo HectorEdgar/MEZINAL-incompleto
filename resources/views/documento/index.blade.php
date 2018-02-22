@@ -9,35 +9,36 @@
 	</div>
 </div>
 
-<div class="row">
-	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-		<div class="table-responsive">
-			<table class="table table-striped table-bordered table-condensed table-hover">
-				<thead>
-					<th>Id</th>
-					<th>Titulo</th>
-					<td>Pais</td>
-					<td>Estado</td>
-					<td>Fecha Publicación</td>
-					<td>Url</td>
-					<td>Investigador</td>
-					<td>Fecha Consulta</td>
-					<td>Fecha Registro</td>
-					<td>Opciones</td>
+
+		<div class="table-responsive table-responsive-xl table-responsive-md table-responsive-lg table-responsive-sm">
+			<table class="table table-hover table-sm">
+				<thead class="thead-dark">
+					<tr>
+						<th scope="col" class="text-center align-middle">Id</th>
+						<th scope="col" class="text-center align-middle">Titulo</th>
+						<th scope="col" class="text-center align-middle">Pais</th>
+						<th scope="col" class="text-center align-middle">Estado</th>
+						<th scope="col" class="text-center align-middle">Fecha Publicación</th>
+						<th scope="col" class="text-center align-middle">Url</th>
+						<th scope="col" class="text-center align-middle">Investigador</th>
+						<th scope="col" class="text-center align-middle">Fecha Consulta</th>
+						<th scope="col" class="text-center align-middle">Fecha Registro</th>
+						<th scope="col" class="text-center align-middle">Opciones</th>
+					</tr>
 
 				</thead>
                @foreach ($documento as $doc)
 				<tr>
-					<td>{{ $doc->Id_doc}}</td>
-					<td>{{ $doc->titulo}}</td>
-					<td>{{ $doc->lugar_public_pais}}</td>
-					<td>{{ $doc->lugar_public_edo}}</td>
-					<td>{{ $doc->fecha_publi}}</td>
-					<td><a href="{{ $doc->url}}">{{ $doc->url}}</a></td>
-					<td>{{ $doc->investigador}}</td>
-					<td>{{ $doc->fecha_consulta}}</td>
-					<td>{{ $doc->fecha_registro}}</td>
-					<td>
+					<th scope="row" class="text-center align-middle">{{ $doc->Id_doc}}</th>
+					<td class="text-center align-middle">{{ $doc->titulo}}</td>
+					<td class="text-center align-middle">{{ $doc->lugar_public_pais}}</td>
+					<td class="text-center align-middle">{{ $doc->lugar_public_edo}}</td>
+					<td class="text-center align-middle">{{ $doc->fecha_publi}}</td>
+					<td class="text-center align-middle"><a href="{{ $doc->url}}">{{ $doc->url}}</a></td>
+					<td class="text-center align-middle">{{ $doc->investigador}}</td>
+					<td class="text-center align-middle">{{ $doc->fecha_consulta}}</td>
+					<td class="text-center align-middle">{{ $doc->fecha_registro}}</td>
+					<td class="text-center align-middle">
 							<a href="{{URL::action('DocumentoController@edit',$doc->Id_doc)}}">
 							<img length="30px" width="30px" src="{{asset('imgs/editar.svg')}}" title="Editar"></img>
 							</a>
@@ -52,9 +53,9 @@
 				@include('Documento.modal')
 				@endforeach
 			</table>
+		
+			<!--RENDER ES EL PAGINADOR -->
+			{{$documento->render()}}
 		</div>
-		<!--RENDER ES EL PAGINADOR -->
-		{{$documento->render()}}
-	</div>
-</div>
+
 @endsection
