@@ -32,6 +32,8 @@
       </div>
     </div>
   </div>
+
+  
   
   <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
     <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
@@ -96,7 +98,7 @@
         <p class="card-text text-center">Entra al catálogo de la tabla Proyecto</p>
       </div>
       <div class="card-footer" style="background-color:#3F51B5 ">
-        <small class="text-muted"><a href="/tema" class="btn  text-white container-fluid">Entrar</a></small>
+        <small class="text-muted"><a href="/" class="btn  text-white container-fluid">Entrar</a></small>
       </div>
     </div>
   </div>
@@ -110,7 +112,7 @@
         <p class="card-text text-center">Entra al catálogo de la tabla Lugar</p>
       </div>
       <div class="card-footer" style="background-color: #D4AC0D">
-        <small class="text-muted" ><a href="/tema" class="btn  text-white container-fluid" style="background-color:#D4AC0D">Entrar</a></small>
+        <small class="text-muted" ><a href="/" class="btn  text-white container-fluid" style="background-color:#D4AC0D">Entrar</a></small>
       </div>
     </div>
   </div>
@@ -124,7 +126,7 @@
         <p class="card-text text-center">Entra al catálogo de la tabla Persona</p>
       </div>
       <div class="card-footer" style="background-color:#FF7043">
-        <small class="text-muted" ><a href="/tema" class="btn  text-white container-fluid" style="background-color:#FF7043">Entrar</a></small>
+        <small class="text-muted" ><a href="/" class="btn  text-white container-fluid" style="background-color:#FF7043">Entrar</a></small>
       </div>
     </div>
   </div>
