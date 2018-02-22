@@ -128,7 +128,7 @@
       <div class="card-header text-center"> <img height="42" width="42" src="{{ asset('imgs/catalogoDocumento.svg
       ') }}"></div>
       <div class="card-body">
-        <h5 class="card-title text-center">Categoria Documento</h5>
+        <h5 class="card-title text-center">Cat de Documento</h5>
         <p class="card-text text-center">Entra al catálogo de la tabla documento</p>
       </div>
       <div class="card-footer">

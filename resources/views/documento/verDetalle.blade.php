@@ -131,6 +131,8 @@
                                 <th>Publicado</th>
                                 <td> {{$linea}}</td>
                           </tr>
+
+                          
                       </table>
 
         </div>
@@ -146,6 +148,7 @@
                                 <th>Nombre</th>
                                 <th>Apellidos</th>
                                 <th>Cargo</th>
+                                <td>Opciones</td>
                           </tr>
                           <tr>
                                  
@@ -162,6 +165,14 @@
                                 <td>
                                       {{ $actor->cargo}}
                                 </td>
+                                <td>
+                                    <a href="">
+							<img length="30px" width="30px" src="{{asset('imgs/editar.svg')}}" title="Editar"></img>
+							</a>
+							<a href="">
+							<img length="30px" width="30px" src="{{asset('imgs/eliminar.svg')}}" title="Eliminar"></img>
+                                          </a>
+                                </td>
                         </tr>
                                 @endforeach
                                 @endif
@@ -175,10 +186,25 @@
                   @if (count($temas)==0)
                   <center>Sin Temas vinculados</center>
                   @else
+
+
+                  <tr>
+                                <th>Tema</th>
+                                <th>Opciones</th>
+                                
+                  </tr>
                           <tr>
                                 @foreach ($temas as $tema)
                                 <td> 
                                     {{$tema->descripcion}}
+                                </td>
+                                <td>
+                                    <a href="">
+							<img length="30px" width="30px" src="{{asset('imgs/editar.svg')}}" title="Editar"></img>
+							</a>
+							<a href="">
+							<img length="30px" width="30px" src="{{asset('imgs/eliminar.svg')}}" title="Eliminar"></img>
+                                          </a>
                                 </td>
                           </tr>
                                 @endforeach
@@ -199,7 +225,7 @@
                         <th>Ubicación</th>
                         <th>País</th>
                         <th>Región Geografica</th>
-                        
+                        <th>Opciones</th>
                   </tr>
                           <tr>
                                 @foreach ($lugares as $lugar)
@@ -215,6 +241,14 @@
                                 <td> 
                                     {{$lugar->region}}
                                 </td>  
+                                <td>
+                                    <a href="">
+							<img length="30px" width="30px" src="{{asset('imgs/editar.svg')}}" title="Editar"></img>
+							</a>
+							<a href="">
+							<img length="30px" width="30px" src="{{asset('imgs/eliminar.svg')}}" title="Eliminar"></img>
+                                          </a>
+                                </td>
                          </tr>
                                 @endforeach
                                 @endif
@@ -234,6 +268,7 @@
                                 <th>Siglas</th>
                                 <th>Pais</th>
                                 <th>Localidad</th>
+                                <th>Opciones</th>
                           </tr>
                           <tr>
                                 @foreach ($instituciones as $inst)
@@ -252,6 +287,14 @@
                                 <td>
                                       {{ $inst->localidad}}
                                 </td>
+                                <td>
+                                    <a href="">
+							<img length="30px" width="30px" src="{{asset('imgs/editar.svg')}}" title="Editar"></img>
+							</a>
+							<a href="">
+							<img length="30px" width="30px" src="{{asset('imgs/eliminar.svg')}}" title="Eliminar"></img>
+                                          </a>
+                                </td>
                         </tr>
                                 @endforeach
                                 @endif
@@ -265,11 +308,25 @@
                   @if (count($subtemas)==0)
                   <center>Sin Subtemas vinculados</center>
                   @else
+
+                  <tr>
+                                <th>Subtema</th>
+                                <th>Opciones</th>
+                                
+                  </tr>
                           <tr>
                                 @foreach ($subtemas as $sub)
                                 
                                 <td> 
                                     {{$sub->subtema}}
+                                </td>
+                                <td>
+                                    <a href="">
+							<img length="30px" width="30px" src="{{asset('imgs/editar.svg')}}" title="Editar"></img>
+							</a>
+							<a href="">
+							<img length="30px" width="30px" src="{{asset('imgs/eliminar.svg')}}" title="Eliminar"></img>
+                                          </a>
                                 </td>
                                 
                         </tr>
@@ -285,9 +342,12 @@
                   @if (count($obras)==0)
                   <center>Sin Obras vinculadas</center>
                  @else
+
+      
                   <tr>
                         <th>ID</th>
                         <th>Nombre</th>
+                        <th>Opciones</th>
                   </tr> 
                   @foreach ($obras as $obra)
                                 <tr>
@@ -296,6 +356,14 @@
                                 </td>
                                 <td> 
                                     {{$obra->nombre}}
+                                </td>
+                                <td>
+                                    <a href="">
+							<img length="30px" width="30px" src="{{asset('imgs/editar.svg')}}" title="Editar"></img>
+							</a>
+							<a href="">
+							<img length="30px" width="30px" src="{{asset('imgs/eliminar.svg')}}" title="Eliminar"></img>
+                                          </a>
                                 </td>
                                 
                               </tr>
