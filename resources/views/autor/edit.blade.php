@@ -5,6 +5,12 @@
 @section('contenido')
 <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{URL::action('AutorController@index')}}">Autor</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Editar</li>
+            </ol>
+        </nav>
         <h3>Editar Autor {{$autor->nombre}}</h3>
         @if (count($errors)>0)
         <div class="alert alert-danger">

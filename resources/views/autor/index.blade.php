@@ -2,9 +2,17 @@
 @section('titulo')
     Index de autor
 @endsection
+
 @section('contenido')
+
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Autor</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Index</li>
+                </ol>
+            </nav>
             <h3 class="text-center">
                 Listado de Autores   
             </h3>
