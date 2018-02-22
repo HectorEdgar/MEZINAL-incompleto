@@ -3,7 +3,6 @@
 
 <h1> Detalle del Documento </h1>
 <h5> ( {{$documento->Id_doc}} ) {{$documento->titulo}}</h5>
-
 <br>
 <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item">
@@ -34,7 +33,9 @@
         <div class="tab-pane fade show active" id="generales" role="tabpanel" aria-labelledby="generales-tab">
                 <br>
                 <table class="table table-bordered">
-                          <tr>
+
+                  <!-- TODAS LAS VARIABLES QUE SE IMPRIMEN ESTAN MANEJADAS EN EL CONTROLADOR DE DOCUMENTO -->
+                                                  <tr>
                                 <th>ID de Documento</th>
                                 <td> {{$documento->Id_doc}}</td>
                           </tr>
@@ -342,8 +343,6 @@
                   @if (count($obras)==0)
                   <center>Sin Obras vinculadas</center>
                  @else
-
-      
                   <tr>
                         <th>ID</th>
                         <th>Nombre</th>
