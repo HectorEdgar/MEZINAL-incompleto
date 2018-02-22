@@ -16,11 +16,6 @@
 					<tr>
 						<th scope="col" class="text-center align-middle">Id</th>
 						<th scope="col" class="text-center align-middle">Titulo</th>
-						<th scope="col" class="text-center align-middle">Pais</th>
-						<th scope="col" class="text-center align-middle">Estado</th>
-						<th scope="col" class="text-center align-middle">Fecha Publicación</th>
-						<th scope="col" class="text-center align-middle">Url</th>
-						<th scope="col" class="text-center align-middle">Investigador</th>
 						<th scope="col" class="text-center align-middle">Fecha Consulta</th>
 						<th scope="col" class="text-center align-middle">Fecha Registro</th>
 						<th scope="col" class="text-center align-middle">Opciones</th>
@@ -31,11 +26,6 @@
 				<tr>
 					<th scope="row" class="text-center align-middle">{{ $doc->Id_doc}}</th>
 					<td class="text-center align-middle">{{ $doc->titulo}}</td>
-					<td class="text-center align-middle">{{ $doc->lugar_public_pais}}</td>
-					<td class="text-center align-middle">{{ $doc->lugar_public_edo}}</td>
-					<td class="text-center align-middle">{{ $doc->fecha_publi}}</td>
-					<td class="text-center align-middle"><a href="{{ $doc->url}}">{{ $doc->url}}</a></td>
-					<td class="text-center align-middle">{{ $doc->investigador}}</td>
 					<td class="text-center align-middle">{{ $doc->fecha_consulta}}</td>
 					<td class="text-center align-middle">{{ $doc->fecha_registro}}</td>
 					<td class="text-center align-middle">
