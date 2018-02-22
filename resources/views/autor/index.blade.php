@@ -7,8 +7,10 @@
 
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <!--Etiquetas de breadcrum-->
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Inicio</a></li>
                     <li class="breadcrumb-item"><a href="#">Autor</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Index</li>
                 </ol>
@@ -21,11 +23,12 @@
         </div>
     </div>
 
-    
+        <!--Etiquetas del formulario de busqueda-->
        <div class="row">
             <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                 @include('autor.search')
             </div>
+            <!--Etiquetas de la imagen de agregar-->
             <div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-xs-12">
                 <a href="autor/create" class="btn btn-outline-success col-sm-12 col-xs-12" >
                     <img width="30px" src="{{asset('imgs/agregar.svg')}}"></img>
