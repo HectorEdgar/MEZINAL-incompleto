@@ -21,17 +21,19 @@
         </div>
     </div>
 
-    <div class="container">
+    
        <div class="row">
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+            <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                 @include('autor.search')
             </div>
-            <div class="col-auto">
-                    <a href="autor/create"><button type="button" class="btn btn-outline-success">
-                        <img length="30px" width="30px" src="{{asset('imgs/agregar.svg')}}"></img></button></a> 
+            <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                <a href="autor/create" class="btn btn-outline-success col-sm-12 col-xs-12" >
+                    <img width="30px" src="{{asset('imgs/agregar.svg')}}"></img>
+                </a>
             </div>
+           
         </div>
-    </div>
+        <br>
         <div class="table-responsive table-responsive-xl table-responsive-md table-responsive-lg table-responsive-sm">        
         
             <table class="table table-hover table-sm ">
