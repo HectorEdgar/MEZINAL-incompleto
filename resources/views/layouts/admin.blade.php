@@ -13,6 +13,7 @@
  <!-- Custom fonts for this template-->
  <link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
  <link href="{{asset('css/estiloLibre.css')}}" rel="stylesheet" type="text/css">
+ <script src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
 
 </head>
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
@@ -58,20 +59,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tema">
-                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#Tema" data-parent="#exampleAccordion">
-                        <i class="fa fa-fw fa-wrench"></i>
-                        <span class="nav-link-text">Tema</span>
-                    </a>
-                    <ul class="sidenav-second-level collapse" id="Tema">
-                        <li>
-                            <a href="/tema">Ver Temas</a>
-                        </li>
-                        <li>
-                            <a href="/tema/create">Crear Tema</a>
-                        </li>
-                    </ul>
-                </li>
+
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Eje">
                     <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#Eje" data-parent="#exampleAccordion">
                         <i class="fa fa-fw fa-wrench"></i>
@@ -86,6 +74,44 @@
                         </li>
                     </ul>
                 </li>
+
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Proyecto">
+                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#Proyecto" data-parent="#exampleAccordion">
+                        <i class="fa fa-fw fa-wrench"></i>
+                        <span class="nav-link-text">Proyecto</span>
+                    </a>
+                    <ul class="sidenav-second-level collapse" id="Proyecto">
+                        <li>
+                            <a href="/">Ver Proyecto</a>
+                        </li>
+                        <li>
+                            <a href="/">Crear Projecto</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tema">
+                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#Tema" data-parent="#exampleAccordion">
+                        <i class="fa fa-fw fa-wrench"></i>
+                        <span class="nav-link-text">Tema</span>
+                    </a>
+                    <ul class="sidenav-second-level collapse" id="Tema">
+                        <li>
+                            <a href="/tema">Ver Temas</a>
+                        </li>
+                        <li>
+                            <a href="/tema/create">Crear Tema</a>
+                        </li>
+                    </ul>
+                </li>
+
+
+
+
+                
+
+
+
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Editor">
                     <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#Editor" data-parent="#exampleAccordion">
                         <i class="fa fa-fw fa-file"></i>
@@ -101,6 +127,8 @@
                     </ul>
                 </li>
             </ul>
+
+
            
             <ul class="navbar-nav sidenav-toggler">
                 <li class="nav-item">
