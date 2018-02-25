@@ -31,7 +31,7 @@
 
                     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Documento">
                             <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#Documento" data-parent="#exampleAccordion">
-                                <i class="fa fa-fw fa-wrench"></i>
+                                <i class="fa fa-fw fa-file"></i>
                                 <span class="nav-link-text">Documento</span>
                             </a>
                             <ul class="sidenav-second-level collapse" id="Documento">
@@ -47,7 +47,7 @@
 
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Autor">
                     <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#Autor" data-parent="#exampleAccordion">
-                        <i class="fa fa-fw fa-wrench"></i>
+                        <i class="fa fa-fw fa-user"></i>
                         <span class="nav-link-text">Autor</span>
                     </a>
                     <ul class="sidenav-second-level collapse" id="Autor">
@@ -60,24 +60,26 @@
                     </ul>
                 </li>
 
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Eje">
-                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#Eje" data-parent="#exampleAccordion">
-                        <i class="fa fa-fw fa-wrench"></i>
-                        <span class="nav-link-text">Eje</span>
+                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Editor">
+                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#Editor" data-parent="#exampleAccordion">
+                        <i class="fa fa-fw fa-male"></i>
+                        <span class="nav-link-text">Editor</span>
                     </a>
-                    <ul class="sidenav-second-level collapse" id="Eje">
+                    <ul class="sidenav-second-level collapse" id="Editor">
                         <li>
-                            <a href="/eje">Ver Ejes</a>
+                            <a href="/editor">Ver Editores</a>
                         </li>
                         <li>
-                            <a href="/eje/create">Crear Eje</a>
+                            <a href="/editor/create">Crear Editor</a>
                         </li>
                     </ul>
                 </li>
 
+
+                
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Proyecto">
                     <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#Proyecto" data-parent="#exampleAccordion">
-                        <i class="fa fa-fw fa-wrench"></i>
+                        <i class="fa fa-fw fa-product-hunt"></i>
                         <span class="nav-link-text">Proyecto</span>
                     </a>
                     <ul class="sidenav-second-level collapse" id="Proyecto">
@@ -90,9 +92,39 @@
                     </ul>
                 </li>
 
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Institucion">
+                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#Institucion" data-parent="#exampleAccordion">
+                        <i class="fa fa-fw fa-italic"></i>
+                        <span class="nav-link-text">Institución</span>
+                    </a>
+                    <ul class="sidenav-second-level collapse" id="Institucion">
+                        <li>
+                            <a href="/eje">Ver Instituciones</a>
+                        </li>
+                        <li>
+                            <a href="/eje/create">Crear Institución</a>
+                        </li>
+                    </ul>
+                </li>
+                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="persona">
+                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#persona" data-parent="#exampleAccordion">
+                        <i class="fa fa-fw fa-thumbs-up"></i>
+                        <span class="nav-link-text">Persona / Actor Social</span>
+                    </a>
+                    <ul class="sidenav-second-level collapse" id="persona">
+                        <li>
+                            <a href="/eje">Ver Personas/Actores Sociales</a>
+                        </li>
+                        <li>
+                            <a href="/eje/create">Crear Persona</a>
+                        </li>
+                    </ul>
+                </li>
+
+
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tema">
                     <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#Tema" data-parent="#exampleAccordion">
-                        <i class="fa fa-fw fa-wrench"></i>
+                        <i class="fa fa-fw fa-book"></i>
                         <span class="nav-link-text">Tema</span>
                     </a>
                     <ul class="sidenav-second-level collapse" id="Tema">
@@ -106,26 +138,22 @@
                 </li>
 
 
-
-
-                
-
-
-
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Editor">
-                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#Editor" data-parent="#exampleAccordion">
-                        <i class="fa fa-fw fa-file"></i>
-                        <span class="nav-link-text">Editor</span>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="subtema">
+                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#subtema" data-parent="#exampleAccordion">
+                        <i class="fa fa-fw fa-bookmark"></i>
+                        <span class="nav-link-text">Subtema</span>
                     </a>
-                    <ul class="sidenav-second-level collapse" id="Editor">
+                    <ul class="sidenav-second-level collapse" id="subtema">
                         <li>
-                            <a href="/editor">Ver Editores</a>
+                            <a href="/tema">Ver Subtemas</a>
                         </li>
                         <li>
-                            <a href="/editor/create">Crear Editor</a>
+                            <a href="/tema/create">Crear Subtema</a>
                         </li>
                     </ul>
                 </li>
+
+            
             </ul>
 
 

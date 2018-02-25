@@ -11,7 +11,7 @@
 
 
 
-<h1> Detalle del Documento </h1>
+<h1> Resumen del Documento </h1>
 <h5> ( {{$documento->Id_doc}} ) {{$documento->titulo}}</h5>
 <br>
 <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -46,7 +46,7 @@
                 <table class="table table-bordered">
 
                   <!-- TODAS LAS VARIABLES QUE SE IMPRIMEN ESTAN MANEJADAS EN EL CONTROLADOR DE DOCUMENTO -->
-                                                  <tr>
+                        <tr>
                                 <th>ID de Documento</th>
                                 <td> {{$documento->Id_doc}}</td>
                           </tr>
@@ -159,17 +159,21 @@
         </div>
         <div class="tab-pane fade" id="actorsocial" role="tabpanel" aria-labelledby="actorsocial-tab">
               <br>
-              <h4>Actores Sociales</h4>
             <table class="table table-bordered">
+                  <h5>Actores Sociales</h5>
                   @if (count($actoresSociales)==0)
-                  <center>Sin Actores Sociales vinculados</center>
+                  <center>Sin Actores Sociales vinculados <br><button class="btn btn-success">Agregar</button></center>
                   @else
+                 
                           <tr>
+
                                 <th>Id</th>
                                 <th>Nombre</th>
                                 <th>Apellidos</th>
                                 <th>Cargo</th>
                                 <td>Opciones</td>
+                                <td><button class="btn btn-success">Agregar</button></td>
+
                           </tr>
                           <tr>
                                  
@@ -205,13 +209,14 @@
               <h4>Temas que se tocan en el documento</h4>
             <table class="table table-bordered">
                   @if (count($temas)==0)
-                  <center>Sin Temas vinculados</center>
+                  <center>Sin Temas vinculados <br><button class="btn btn-success">Agregar</button></center>
                   @else
 
 
                   <tr>
                                 <th>Tema</th>
                                 <th>Opciones</th>
+                                 <td><button class="btn btn-success">Agregar</button></td>
                                 
                   </tr>
                           <tr>
@@ -239,7 +244,7 @@
             <h4>Temas que se tocan en el documento</h4>
             <table class="table table-bordered">
                   @if (count($lugares)==0)
-                  <center>Sin Lugares vinculados</center>
+                  <center>Sin Lugares vinculados <br><button class="btn btn-success">Agregar</button></center>
                   @else
                   <tr>
                         <th>ID</th>
@@ -247,6 +252,7 @@
                         <th>País</th>
                         <th>Región Geografica</th>
                         <th>Opciones</th>
+                         <td><button class="btn btn-success">Agregar</button></td>
                   </tr>
                           <tr>
                                 @foreach ($lugares as $lugar)
@@ -281,7 +287,7 @@
              <h4>Instituciones</h4>
             <table class="table table-bordered">
                    @if (count($instituciones)==0)
-                  <center>Sin instituciones vinculadas</center>
+                  <center>Sin instituciones vinculadas <br><button class="btn btn-success">Agregar</button></center>
                   @else
                           <tr>
                                 <th>Id</th>
@@ -290,6 +296,7 @@
                                 <th>Pais</th>
                                 <th>Localidad</th>
                                 <th>Opciones</th>
+                                 <td><button class="btn btn-success">Agregar</button></td>
                           </tr>
                           <tr>
                                 @foreach ($instituciones as $inst)
@@ -327,12 +334,13 @@
               <h4>Subtemas que se tocan en el documento</h4>
             <table class="table table-bordered">
                   @if (count($subtemas)==0)
-                  <center>Sin Subtemas vinculados</center>
+                  <center>Sin Subtemas vinculados <br><button class="btn btn-success">Agregar</button></center>
                   @else
 
                   <tr>
                                 <th>Subtema</th>
                                 <th>Opciones</th>
+                                 <td><button class="btn btn-success">Agregar</button></td>
                                 
                   </tr>
                           <tr>
@@ -361,12 +369,14 @@
             <h4>Obras que se tocan en el documento</h4>
             <table class="table table-bordered">
                   @if (count($obras)==0)
-                  <center>Sin Obras vinculadas</center>
+                  <center>Sin Obras vinculadas <br><button class="btn btn-success">Agregar</button></center>
+                  
                  @else
                   <tr>
                         <th>ID</th>
                         <th>Nombre</th>
                         <th>Opciones</th>
+                         <td><button class="btn btn-success">Agregar</button></td>
                   </tr> 
                   @foreach ($obras as $obra)
                                 <tr>
