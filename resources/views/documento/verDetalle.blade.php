@@ -1,6 +1,16 @@
 @extends ('layouts.admin')
 @section ('contenido')
 
+  <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                    <li class="breadcrumb-item"><a href="/documento">Documento</a></li>
+                    <li class="breadcrumb-item active"><a href="#">VerDetalle</a></li>
+                </ol>
+  </nav>
+
+
+
 <h1> Detalle del Documento </h1>
 <h5> ( {{$documento->Id_doc}} ) {{$documento->titulo}}</h5>
 <br>
@@ -27,8 +37,9 @@
         
         <li class="nav-item">
                 <button class="btn btn-outline-primary" id="obras-tab" data-toggle="tab" href="#obras" role="tab" aria-controls="obras" aria-selected="false">Obras</button>
-              </li>
+        </li>
       </ul>
+
       <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="generales" role="tabpanel" aria-labelledby="generales-tab">
                 <br>
@@ -77,6 +88,9 @@
                                 @endforeach 
                                 </td>
                                 @endif
+                                <td>
+                                      <button class="btn" style="background-color:#52BE80; color:white">Administrar<br>Autores</button>
+                                </td>
                         </tr>
                                
                           <tr>
@@ -90,6 +104,9 @@
                                 @endforeach 
                                 </td>
                                 @endif
+                                <td>
+                                      <button class="btn" style="background-color:#7FB3D5; color:white">Administrar<br>Editores</button>
+                                </td>
                           </tr>
                           <tr>
                                 <th>Fecha de Publicación</th>
@@ -122,6 +139,9 @@
                                 <td> {{$pro->proyecto}}</td>
                                 @endforeach
                                 @endif
+                                <td>
+                                      <button class="btn" style="background-color:#A569BD; color:white">Administrar<br>Proyectos</button>
+                                </td>
                           </tr>
                           <tr>
                                 <th>Estado de Revisión</th>
@@ -370,6 +390,8 @@
                    @endif  
                           
                       </table>
+
+
         </div>
       </div>               
 

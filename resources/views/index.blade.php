@@ -6,25 +6,42 @@
   @guest
     <h3>Inicie Sesión por favor</h3>
     @else
-      <h3>Bienvenido {{ Auth::user()->name }} </h3>
-      <br>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page"><center>Bienvenido {{ Auth::user()->name }}</center></li>
+      </ol>
+    </nav>
   @endguest
-
-  </br>
-
   <!-- ESTAS SON LAS CARTAS PRESENTADAS EN EL MENÚ  -->
 
 <div class="row">
 
-  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
     <div class="card text-white mb-3" style="background-color: #F08080">
       <div class="card-header text-center">
         <img height="42" width="42" src="{{ asset('imgs/busquedas.svg') }}" class="img-fluid" alt="Responsive image">
       </div>
       
       <div class="card-body">
-        <h5 class="card-title text-center">Area de Consultas</h5>
+        <h5 class="card-title text-center">Área de Consultas</h5>
         <p class="card-text text-center">Consultas por Id, Tipo, Proyecto, Estado de Revisión</p>
+        
+      </div>
+      <div class="card-footer">
+        <small class="text-muted"><a href="/" class="btn btn-outline-white text-white container-fluid">Entrar</a></small>
+      </div>
+    </div>
+  </div>
+
+   <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+    <div class="card text-white mb-3" style="background-color: #6A5ACD">
+      <div class="card-header text-center">
+        <img height="42" width="42" src="{{ asset('imgs/manuales.svg') }}" class="img-fluid" alt="Responsive image">
+      </div>
+      
+      <div class="card-body">
+        <h5 class="card-title text-center">Manuales e Instructivos</h5>
+        <p class="card-text text-center">Manual de Usuario, Manual de Catalogación, Instructivos</p>
         
       </div>
       <div class="card-footer">
@@ -105,7 +122,7 @@
 
   <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
     <div class="card text-white  mb-3" style="max-width: 18rem;">
-      <div class="card-header text-center" style="background-color: #D4AC0D"><img height="42" width="42" src="{{ asset('imgs/tema.png
+      <div class="card-header text-center" style="background-color: #D4AC0D"><img height="42" width="42" src="{{ asset('imgs/lugar.png
       ') }}"></div>
       <div class="card-body" style="background-color: #D4AC0D">
         <h5 class="card-title text-center">Lugar</h5>
@@ -119,7 +136,7 @@
 
   <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
     <div class="card text-white  mb-3" style="max-width: 18rem;">
-      <div class="card-header text-center" style="background-color:#FF7043"><img height="42" width="42" src="{{ asset('imgs/tema.png
+      <div class="card-header text-center" style="background-color:#FF7043"><img height="42" width="42" src="{{ asset('imgs/actorsocial.svg
       ') }}"></div>
       <div class="card-body" style="background-color:#FF7043">
         <h5 class="card-title text-center">Actor Social</h5>
@@ -133,7 +150,7 @@
 
     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
     <div class="card text-white  mb-3" style="max-width: 18rem;">
-      <div class="card-header text-center" style="background-color:#138D75"><img height="42" width="42" src="{{ asset('imgs/tema.png
+      <div class="card-header text-center" style="background-color:#138D75"><img height="42" width="42" src="{{ asset('imgs/obra.svg
       ') }}"></div>
       <div class="card-body" style="background-color: #138D75">
         <h5 class="card-title text-center">Obras</h5>
@@ -151,7 +168,7 @@
 
   <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
     <div class="card text-white mb-3" style="max-width: 18rem;">
-      <div class="card-header text-center" style="background-color: #558B2F"><img height="42" width="42" src="{{ asset('imgs/tema.png
+      <div class="card-header text-center" style="background-color: #558B2F"><img height="42" width="42" src="{{ asset('imgs/tema.svg
       ') }}"></div>
       <div class="card-body" style="background-color: #558B2F">
         <h5 class="card-title text-center">Tema</h5>
@@ -165,7 +182,7 @@
 
     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
     <div class="card text-white  mb-3" style="max-width: 18rem;">
-      <div class="card-header text-center" style="background-color: #483D8B"><img height="42" width="42" src="{{ asset('imgs/tema.png
+      <div class="card-header text-center" style="background-color: #483D8B"><img height="42" width="42" src="{{ asset('imgs/subtema.png
       ') }}"></div>
       <div class="card-body" style="background-color: #483D8B">
         <h5 class="card-title text-center">Subtema</h5>
@@ -180,7 +197,7 @@
 
     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
     <div class="card text-white  mb-3" style="max-width: 18rem;">
-      <div class="card-header text-center" style="background-color: #E91E63  "><img height="42" width="42" src="{{ asset('imgs/tema.png
+      <div class="card-header text-center" style="background-color: #E91E63  "><img height="42" width="42" src="{{ asset('imgs/grupos.svg
       ') }}"></div>
       <div class="card-body" style="background-color: #E91E63  ">
         <h5 class="card-title text-center">Grupos</h5>

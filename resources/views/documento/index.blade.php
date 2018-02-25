@@ -1,9 +1,17 @@
 @extends ('layouts.admin')
 @section ('contenido')
+
+  <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                    <li class="breadcrumb-item active"><a href="/documento">Documento</a></li>
+                </ol>
+  </nav>
+
+
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
 		<h3>Listado de 	Documentos <a href="documento/create"><button class="btn btn-success">Nuevo</button></a></h3>
-
 		<!--ESTO ES COMO UNA MASTER PAGE-->
 		@include('documento.search')
 	</div>
