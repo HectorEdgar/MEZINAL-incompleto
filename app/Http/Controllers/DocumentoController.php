@@ -370,7 +370,35 @@ class DocumentoController extends Controller
      */
     public function edit($id)
     {
-        return view('documento.edit', ["documento" => Documento::findOrFail($id)]);
+        $documento =  Documento::findOrFail($id);
+        $fecha=null;
+        $fechaExtra=null;
+        $categorias=DB::table('catalogo_docu')->get();
+
+        $categorias = $categorias->filter(function($item) { //funcion que quita elemnto con id 18 (Videos)
+          return $item->id_cata_doc != 16;
+      });
+       
+        $mesesFecha = array('nombre'=>'Enero', 'Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre');
+
+        if($documento->fecha_publi==1){
+
+            $aux=DB::table('fecha')->where('fk_doc', '=', $id)->get();
+            $fecha= $aux[0]->fecha;
+            Log::warning($fecha);
+
+        }
+        else{
+
+            $aux=DB::table('fecha_extra')->where('id_fx', '=', $id)->get();
+            $fechaExtra= $aux[0]->anio;
+            Log::warning($fechaExtra);
+
+
+        }
+        Log::warning($fecha);
+
+        return view('documento.edit', ["documento" => $documento,"fecha"=>$fecha,"fechaExtra"=>$fechaExtra,"mesesFecha"=>$mesesFecha,'categorias' => $categorias]);
     }
     /**
      * Update the specified resource in storage.
